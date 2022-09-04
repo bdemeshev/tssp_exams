@@ -1,0 +1,166 @@
+% !TEX root = ../tssp_exams.tex
+
+\newpage
+\thispagestyle{empty}
+\section{December exam}
+ 
+
+
+\subsection[2021-2022]{\hyperref[sec:sol_kr_02_2021_2022]{2021-2022}}
+\label{sec:kr_02_2021_2022} % \label{ссылка сюда}
+
+Short rules: 120 minutes, online without proctoring, $(W_t)$ is a standard Wiener process.
+
+Date: 2021-12-25
+
+\begin{enumerate}
+
+  \item (10 points) Consider an Ito's process $I_t = 2022 + W_t t^2 + \int_0^t W_u^3 dW_u + \int_0^t W_u^2 du$.
+    \begin{enumerate}
+      \item Find $dI_t$ and check whether $I_t$ is a martingale. 
+      \item Check whether $J_t = I_t - \E(I_t)$ is a martingale.
+    \end{enumerate}
+    
+  \item (10 points) The random variables $(Z_t)$ are independent identically distributed 
+  with moment generating function given by $M_{Z}(u) = 1/(1 - 5u)^3$. 
+  
+  We define $X_t$ as $X_t = \exp(Z_1 + 2Z_2 + 3Z_3 + \ldots + tZ_t)$ with $X_0 = 0$. 
+  
+  If possible find a martingale of the form $Y_t = h(t) X_t$ where $h()$ is a non-random function.
+  
+  \item (10 points) The process $(Z_t)$ in discrete time is called \textit{stationary} if it has constant expected value 
+  and constant covariances $\gamma_k$ that do not depend on $t$. 
+  \[
+  \begin{cases}
+  \E(Z_t) = \mu; \\
+  \Cov(Z_t, Z_t) = \gamma_0; \\
+  \Cov(Z_t, Z_{t+1}) = \gamma_1; \\
+  \Cov(Z_t, Z_{t+2}) = \gamma_2; \\
+  \ldots \\
+  \end{cases}
+  \]
+  
+  \begin{enumerate}
+    \item If possible provide an example of a martingale that is not stationary.
+    \item If possible provide an example of a stationary process that is not a martingale.
+  \end{enumerate}
+  
+  \item (10 points) Find $\E(W_1 W_2 W_3)$ and $\E(W_2 W_3 \mid W_1)$.
+  \item (10 points) Ded Moroz would like to receive $X_T = S^{-1}_T$ at time $T$ if $S_T < 1$ and nothing otherwise.
+      
+  Assume the framework of Black and Scholes model, $S_t$ is the share price, $r$ is the risk free rate,
+  $\sigma$ is the volatility. 
+  
+  How much Ded Moroz should pay now at $t=0$?
+  
+  
+  \item (20 points) Martingales are everywhere :)
+  
+  Consider the process $Y_t = \exp( - u W_t)$. 
+  
+  \begin{enumerate}
+    \item Find a multiplier $h(u, t)$ such that $M_t = h(u, t) \cdot Y_t$ is a martingale. 
+    \item Find $dY_t$, $\E(Y_t)$ and $\Var(Y_t)$.
+    \item Consider $M_t$ that you have found as a function of $u$. 
+    Find the Taylor approximation of the function $M_t(u)$ up to $u^4$. 
+    \item Consider the coefficient before $u^4$ in the Taylor expansion of $M_t(u)$. 
+    Is it a martingale?
+  \end{enumerate}
+  
+  \item Bonus point. Guess your exam result (out of 70 possible points). 
+  
+  \end{enumerate}
+  
+      
+
+% \subsection[что идет в оглавление]{\hyperref[на что ссылка]{текст ссылки}}
+\subsection[2020-2021]{\hyperref[sec:sol_kr_02_2020_2021]{2020-2021}}
+\label{sec:kr_02_2020_2021} % \label{ссылка сюда}
+
+
+
+Today we celebrate Christmas Eve and 78 years of the Narkompros (People's Commissariat for Education) order governing the compulsory use of the letter «ё» in education process.
+
+Date: 2020-12-24
+
+\begin{enumerate}
+
+    \item Ded Moroz would like to receive $S_1^3$ roubles at time $T=2$,
+    where $S_t$ is the share price. Assume Black-Schёles model is valid, 
+    the risk-free rate is $r=0.1$ and current share price is $S_0=100$.
+
+    How much Ded Moroz should pay now at $t=0$?
+    
+    \item Consider stationary $AR(2)$ model, $y_t = 2 + 0.3 y_{t-1} - 0.02 y_{t-2} + u_t$, where $(u_t)$ is a white noise
+    with $\Var(u_t) = 4$.
+    
+    The last two observations are $y_{100} = 2$, $y_{99} = 1$.
+    \begin{enumerate}
+        \item Find 95\% predictive interval for $y_{102}$.
+        \item Find the first two values of the autocorrelation function, $\rho_1$, $\rho_2$.
+        \item Find the first two values of the partial autocorrelation function, $\phi_{11}$, $\phi_{22}$.
+    \end{enumerate}
+
+    Hint: you need no more than 10 seconds to find both partial autocorrelations provided (b) is sёlved.
+
+    \item The process $y_t$ is described by a simple $GARCH(1, 1)$ model:
+    \[ 
+        \begin{cases}
+            y_t = \sigma_t \nu_t \\
+            \sigma_{t}^{2}= 1 + 0.2 y_{t-1}^{2}+ 0.3 \sigma_{t-1}^{2}    \\
+            \nu_t \sim \cN(0;1)
+        \end{cases}     
+    \]
+
+    The variables $\nu_t$ are independent of past variables $y_{t-k}$, $\nu_{t-k}$, $\sigma_{t-k}$ for all $k\geq 1$.
+    The prёcesses $y_t$, $\sigma^2_t$ are stationary. 
+
+
+    Given $\sigma_{100}=1$ and $\nu_{100} = 0.5$ find 95\% predictive interval for $y_{102}$. 
+
+
+    \item Snegurochka studies a stochastic analog of the Fibonacci sequence
+    \[
+        y_t = y_{t-1} + y_{t-2} + u_t,
+    \]
+    where $(u_t)$ is a white noise process. 
+    \begin{enumerate}
+        \item How many non-stationary solutions are there?
+        \item What can you say about the number and the structure of the stationary solutions?
+        \item Can Snёgurochka find two starting constants $y_0 = c_0$ and $y_1=c_1$ in such a way to make a solution stationary?
+    \end{enumerate}
+
+    Be brave! There are two more exercises!
+    \newpage
+
+    \item The semi-annual $y_t$ is modelled by $ETS(AAA)$ process:
+    
+    \[
+    \begin{cases}
+        u_t \sim \cN(0; 4) \\
+        s_t = s_{t-2} + 0.1 u_t \\
+        b_t = b_{t-1} + 0.2 u_t \\
+        \ell_t = \ell_{t-1} + b_{t-1} + 0.3 u_t \\
+        y_t = \ell_{t-1} + b_{t-1} + s_{t-2} + u_t \\
+    \end{cases}    
+    \]
+
+    \begin{enumerate}
+        \item Given that $s_{100} = 2$, $s_{99} = -1.9$, $b_{100} = 0.5$, $\ell_{100} = 4$ find 95\% prёdictive interval for $y_{102}$. 
+        \item In this problem particular values of parameters are specified. And how many parameters are estimated in semi-annual $ETS(AAA)$ model before real forecasting?
+    \end{enumerate}
+
+    \item The variables $x_t$ take values $0$ or $1$ with equal probabilities.
+    The variables $u_t$ are normal $\cN(0; 1)$. All variables are independent.
+    
+    Consider the process  $z_t = x_t (1-x_{t-2}) u_t$.
+
+    \begin{enumerate}
+        \item Find the covariance $\Cov(z_t, z_s)$. Is the process $z_t$ stationary?
+        \item Given that $z_{100} = 2.3$ find shёrtest predictive intervals for $z_{101}$ and $z_{102}$ with probability of coverage at least 95\%.
+    \end{enumerate}
+
+    \item[Bёnus:] How many letters «ё» have you spotted?
+    
+ 
+\end{enumerate}

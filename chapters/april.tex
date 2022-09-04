@@ -1,0 +1,207 @@
+% !TEX root = ../tssp_exams.tex
+
+\newpage
+\thispagestyle{empty}
+\section{April exams}
+ 
+
+
+\subsection[2021-2022]{\hyperref[sec:sol_kr_03_2021_2022]{2021-2022}}
+\label{sec:kr_03_2021_2022} % \label{ссылка сюда}
+
+Short rules: 120 minutes, one A4 cheat sheet allowed. 
+
+Date: 2022-04-04
+
+% \textbf{Start exam by writing the following honor pledge and signing it.}
+% \vspace{10pt}
+% \begin{tcolorbox}
+% I pledge on my honor that I will not give nor receive any 
+% unauthorized assistance on this exam.
+% \end{tcolorbox}
+% \vspace{20pt}
+
+% \textbf{Problems:}
+
+\begin{enumerate}
+
+\item Consider $ETS(AAN)$ model,
+	$
+	\begin{cases}
+	y_t = \ell_{t-1} + b_{t-1} + u_t \\
+	\ell_t = \ell_{t-1} + b_{t-1} + \alpha u_t \\
+	b_t = b_{t-1} + \beta u_t \\
+	u_t \sim \cN(0;\sigma^2). \\
+	% s_t = s_{t-12} + \gamma \varepsilon_t \\
+	\end{cases}
+	$
+		
+Let $\ell_{100} = 50$, $b_{100} = 2$, $\alpha=0.4$, $\beta=0.5$, $\sigma^2 = 16$.
+
+Calculate one step and two steps ahead 95\% predictive intervals. 
+
+\item Consider the process $y_t = 4 + u_t + u_{t-1} + 2 u_{t-2}$, where $(u_t)$ is a white noise with variance $16$.
+
+\begin{enumerate}
+	\item Is this process stationary? Explain. 
+	\item Find the autocorrelation function of this process. Explain the meaning of $\rho_2$.
+	\item Consider the process $d_t = \Delta y_t$. Is it $ARIMA(p, d, q)$? If yes, then find $p$, $d$ and $q$.
+\end{enumerate}
+
+\item Consider the stationary $AR(2)$ process $y_t = 5 - 0.9y_{t-1} - 0.2y_{t-2} + u_t$, where $(u_t)$ is a white noise. 
+\begin{enumerate}
+	\item Find the first value of autocorrelation function $\rho_1$.
+	\item Find the partial autocorrelation function of this process. Explain the meaning of $\phi_{22}$.
+	\item What is the relationship between values of autocorrelation function $\rho_{100}$, $\rho_{99}$ and $\rho_{98}$.
+\end{enumerate}
+
+Hint: values $\phi_{22}$, $\phi_{33}$ etc may be calculated almost effortlessly :)
+
+\item Consider iid sample from bivariate normal distribution, 
+$
+\begin{pmatrix}
+	X_i \\
+	Y_i \\
+\end{pmatrix}	 \sim \cN \left(     
+\begin{pmatrix}
+	\theta \\
+	2\theta \\
+\end{pmatrix}; 
+\begin{pmatrix}
+	4 & 1 \\
+	1 & 9 \\
+\end{pmatrix}
+\right).
+$
+
+Calculate Fischer information for the following cases: 
+\begin{enumerate}
+	\item You observe $X_1$ only. 
+	\item You observe $X_1$, \ldots, $X_n$.
+	\item You observe $X_1$, \ldots, $X_n$, $Y_1$, \ldots, $Y_n$.
+\end{enumerate}
+
+Hint: the multivariate normal density is 
+$
+f(u) = \frac{1}{\sqrt{\det(2\pi \Sigma)}} \exp( -\frac{1}{2}(u-\mu)^T \Sigma^{-1}(u-\mu)).
+$
+
+\item Random variables $X_1$, \ldots, $X_n$ are independent with density 
+$
+f(x) = \begin{cases}
+	-\ln(a) \cdot a^x, \text{ if } x\geq 0, \\
+	0, \text{ otherwise.}
+\end{cases}	
+$
+\begin{enumerate}
+	\item Estimate $a$ using maximum likelihood. 
+	\item Check whether the estimator is unbiased and consistent. 
+	\item Check whether the corresponding Cramer-Rao lower bound is attained. 
+\end{enumerate}
+
+% \newpage
+\item Consider the $ARCH(1)$ model, $u_t = \sigma_t \nu_t$, where $\nu_t$ are iid $\cN(0;1)$ and 
+$\sigma^2_t = 1 + 0.3 u_{t-1}^2$. 
+\begin{enumerate}
+	\item Find 95\% predictive interval for $u_{101}$ if $u_{100} = -2$.
+	\item Find the autocorrelation function of $r_t = u_t^2$. 
+\end{enumerate}
+
+%\item Random variables $x_t$ are iid with $\P(x_t = 0) = \P(x_t = 1) = 0.5$. 
+%Consider the process $r_t = x_t \cdot x_{t-1} - 0.25$.
+%\begin{enumerate}
+%	\item Is $(r_t)$ stationary?
+%	\item Elon Musk promise that this is $MA(1)$ that can be rewritten as $r_t = u_t + \alpha u_{t-1}$.
+	
+%	Is Elon Musk right? If yes, then express $u_t$ using $x_t$ and its lagged values. 
+%\end{enumerate}
+
+
+\end{enumerate}
+
+    
+
+% \subsection[что идет в оглавление]{\hyperref[на что ссылка]{текст ссылки}}
+\subsection[2020-2021]{\hyperref[sec:sol_kr_03_2020_2021]{2020-2021}}
+\label{sec:kr_03_2020_2021} % \label{ссылка сюда}
+
+Date: 2021-04-13, Rock 'N' Roll day
+
+
+\textbf{Estimation questions}
+
+\begin{enumerate}
+
+
+    \item To go to the mountain top I use a gondola lift in the morning. 
+    I go back from the top using the same gondola lift in the evening. 
+    Cabins are numbered from $1$ to $a$. 
+
+    I have noticed that the absolute difference of cabin numbers of my two trips was $10$. 
+
+    \begin{enumerate}
+        \item Estimate $a$ using maximum likelihood. 
+        \item Estimate $a$ using method of moments. 
+    \end{enumerate}
+
+    \item Random variables $X_1$, $X_2$, \ldots,  $X_n$ are independent identically distributed with density 
+    \[
+    f(x_i \mid \lambda, a) = \frac{\lambda}{2} \exp(-\lambda \abs{x_i - a}).    
+    \]
+
+    Observed values for $n=3$ are $-3$, $1$, $11$.
+
+    \begin{enumerate}
+        \item Estimate $\lambda$ using method of moments for fixed $a = 1$. 
+        \item Estimate $\lambda$ and $a$ using maximum likelihood.
+    \end{enumerate}
+
+    \item Random variables $X_1$, \ldots, $X_n$ are independent and normally distributed $\cN(1, 1/b)$. 
+    
+    \begin{enumerate}
+        \item Estimate $b$ using maximum likelihood.
+        \item Does the estimator achive the Cramer-Rao lower bound?
+        \item Is the estimator consistent?
+        \item Is the estimator unbiased?
+    \end{enumerate}
+
+    \item Random variables $X_1$, $X_2$, \ldots,  $X_n$ are independent identically distributed with density 
+    \[
+    f(x_i \mid \lambda) = \frac{\lambda}{2} \exp(-\lambda \abs{x_i}).    
+    \]
+
+    For $n=100$ I have 40 negative values with sum equal to $-300$ and 60 positive values with sum equal to $500$. 
+
+    \begin{enumerate}
+        \item Test the hypothesis $\lambda = 1$ using LR approach at significance level $\alpha=0.01$.
+        \item Test the hypothesis $\lambda = 1$ using LM approach at significance level $\alpha=0.01$.
+    \end{enumerate}
+
+
+\end{enumerate}
+
+\newpage
+    \textbf{Distribution questions}
+
+    \begin{enumerate}[resume]
+    \item I have three problems in the home assignment. 
+    Time spent on each problem is modelled by independend exponentially distributed random variables with rate $\lambda$: $X_1$, $X_2$, $X_3$.
+
+    \begin{enumerate}
+        \item Find the moment generating function of $X_i$ and hence the moment generating function of $S = X_1 + X_2 + X_3$.
+        \item Find $\E(S^3)$.
+        \item Find the joint density of $R = X_1 / (X_1 + X_2 + X_3)$ and $S$.
+    \end{enumerate}
+
+    \item I have $100$ numbers written on small sheets of paper: $x_1$, $x_2$, \ldots, $x_{100}$. The sum of these numbers is $1$. 
+    
+    Find the possible values of the sum 
+    \[
+    \frac{x_1}{\sqrt{1-x_1}} +     \frac{x_2}{\sqrt{1-x_2}} + \ldots + \frac{x_{100}}{\sqrt{1-x_{100}}}.
+    \]
+    
+
+    Hint: consider a randomly selected number $X$ and apply the Jensen's inequality.
+    
+ 
+\end{enumerate}

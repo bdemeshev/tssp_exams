@@ -1,0 +1,368 @@
+% arara: xelatex: {shell: yes}
+%% arara: biber
+%% arara: xelatex: {shell: yes}
+%% arara: xelatex: {shell: yes}
+
+
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{fontspec}
+
+\usepackage[base]{babel} % hypenation
+% see: https://tex.stackexchange.com/questions/400986/hyphenrules-environment-no-longer-works-with-polyglossia
+\usepackage{polyglossia}
+
+% \setdefaultlanguage{russian}
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+% download "Linux Libertine" OTF-fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+\newfontfamily{\cyrillicfont}{Linux Libertine O}
+\newfontfamily{\cyrillicfontsf}{Linux Libertine O}
+ 
+\usepackage{etoolbox} % to use ifdef, must be after babel
+
+\newtoggle{excerpt}
+\togglefalse{excerpt}  % помечаем, что это не отрывок, а далее в тексте может использовать
+ 
+
+\usepackage[paper=a4paper,
+top=15mm,
+bottom=13.5mm,
+left=13mm, right=13mm, includefoot]{geometry}
+
+\usepackage{etex} % расширение классического tex
+% в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
+
+
+
+
+\usepackage{makeidx} % для создания предметных указателей
+\usepackage{verbatim} % для многострочных комментариев
+%\usepackage[pdftex]{graphicx} % для вставки графики
+% omit pdftex option if not using pdflatex
+
+\usepackage{comment} % для команды excludecomment
+
+
+%\usepackage{dsfont} % шрифт для единички с двойной палочкой (для индикатора события)
+\usepackage{bbm} % шрифт - двойные буквы
+
+
+\usepackage[usenames, dvipsnames, svgnames, table, rgb]{xcolor}
+
+\usepackage{colortbl}
+
+
+% пакет для тестов:
+% \usepackage[box, % запрет на перенос вопросов
+% nopage, % убираем колонтитулы страницы
+% insidebox, % ставим буквы в квадратики
+% separateanswersheet, % добавляем бланк ответов
+% nowatermark, % отсутствие надписи "Черновик"
+% indivanswers,  % показываем верные ответы
+% answers,
+% lang=RU, % локализация слов "нет верных ответов", "вопрос" и тд
+% completemulti % добавлять "нет правильного ответа" во всех вопросах множественного выбора
+% ]{automultiplechoice}
+
+
+\usepackage[colorlinks, hyperindex, unicode, breaklinks]{hyperref} % гиперссылки в pdf
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{epsfig}
+\usepackage{bm}
+\usepackage{color}
+
+\usepackage{multicol}
+\usepackage{multirow} % Слияние строк в таблице
+
+\usepackage{textcomp}  % Чтобы в формулах можно было русские буквы писать через \text{}
+
+%\usepackage{embedfile} % отказались от внедрения тех внутрь pdf так как всё равно всё на гитхабе :)
+
+\usepackage{physics} % \abs \norm \grad, меняет \sin, \cos...
+
+\usepackage{subfigure} % для создания нескольких рисунков внутри одного
+
+\usepackage{tikz, pgfplots} % язык для рисования графики из latex'a
+\usetikzlibrary{trees} % прибамбас в нем для рисовки деревьев
+\usetikzlibrary{arrows} % прибамбас в нем для рисовки стрелочек подлиннее
+\usetikzlibrary{automata, arrows, positioning, calc}
+\usepackage{tikz-qtree} % прибамбас в нем для рисовки деревьев
+
+
+
+
+\usepackage{enumitem} % развернутые списки
+
+% свешиваем пунктуацию (т.е. знаки пунктуации могут вылезать за правую границу текста, при этом текст выглядит ровнее)
+\usepackage{microtype}
+
+% более красивые таблицы
+\usepackage{booktabs}
+% заповеди из докупентации:
+% 1. Не используйте вертикальные линни
+% 2. Не используйте двойные линии
+% 3. Единицы измерения - в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+\usepackage[cache=false]{minted} % вставка кода, нужен питон :)
+% опция cache=false включена, чтобы избегать необходимости
+% чистить кэш при ошибках компиляции
+% возможно вообще подумать об устранении этого пакета:
+% вставок кода мало, а эта зависимость (pygmentize + python)
+% резко затрудняет редактирование новичкам
+% может обойтись listings?
+
+\usepackage{epigraph}
+
+\usepackage{titleps} % заголовки страниц
+
+
+
+
+% по поводу заголовков разделов в колонтитулах
+% https://tex.stackexchange.com/questions/236705
+% поэтому выбрали titleps вместо fancyhdr
+
+\newpagestyle{mypage}{%
+  \headrule
+  \sethead{\sectiontitle}{}{\subsectiontitle}
+  \setfoot{}{}{\thepage}
+}
+\settitlemarks{section,subsection,subsubsection} % !!!!!!no space after comma!!!!!!
+\pagestyle{mypage}
+
+
+
+
+
+\DeclareMathOperator{\Lin}{\mathrm{Lin}}
+\DeclareMathOperator{\Linp}{\Lin^{\perp}}
+\DeclareMathOperator*\plim{plim}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\sgn}{sign}
+\DeclareMathOperator{\sign}{sign}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\amn}{arg\,min}
+\DeclareMathOperator*{\amx}{arg\,max}
+\DeclareMathOperator{\cov}{Cov}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\pCorr}{pCorr}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+
+
+\newcommand{\cN}{\mathrm{N}}
+\newcommand{\cU}{\mathrm{U}}
+\newcommand{\cBinom}{\mathrm{Binom}}
+\newcommand{\cBin}{\cBinom}
+\newcommand{\cExp}{\mathrm{Exp}}
+\newcommand{\cPois}{\mathrm{Pois}}
+\newcommand{\cBeta}{\mathrm{Beta}}
+\newcommand{\cGamma}{\mathrm{Gamma}}
+
+\newcommand \R{\mathbb{R}}
+\newcommand \N{\mathbb{N}}
+\newcommand \Z{\mathbb{Z}}
+
+
+
+
+
+\newcommand{\dx}[1]{\,\mathrm{d}#1} % для интеграла: маленький отступ и прямая d
+\newcommand{\ind}[1]{\mathbbm{1}_{\{#1\}}} % Индикатор события
+%\renewcommand{\to}{\rightarrow}
+\newcommand{\eqdef}{\mathrel{\stackrel{\rm def}=}}
+\newcommand{\iid}{\mathrel{\stackrel{\rm i.\,i.\,d.}\sim}}
+\newcommand{\const}{\mathrm{const}}
+
+
+% вместо горизонтальной делаем косую черточку в нестрогих неравенствах
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*} % \asbuk* \alph* \arabic*
+
+
+
+
+% делаем короче интервал в списках
+\setlength{\itemsep}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+
+% \newenvironment{problem}{}{}
+% тут перещёлкиваем комментарий, чтобы убрать или показать решения:
+% \newenvironment{sol}{}{} % with solutions
+% \excludecomment{sol} % without solutions
+
+
+
+\unitlength=0.6mm
+
+\title{Time Series and Stochastic Processes exams}
+\date{\today}
+\author{Angry Teachers, Folklore}
+
+
+%%%%%%%%%%%%%%%%%% вставки
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Списки без уродских отступов
+\newenvironment{enumerate*}{
+\begin{enumerate}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+
+\newenvironment{itemize*}{
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\abovedisplayskip=0mm
+\abovedisplayshortskip=0mm
+\belowdisplayskip=0mm
+\belowdisplayshortskip=0mm
+
+
+% https://tex.stackexchange.com/questions/241343
+% https://tex.stackexchange.com/questions/168480
+\emergencystretch 5em % разрешаем дополнительные пробелы для упаковки параграфа до правой границы
+
+
+% \setcounter{secnumdepth}{0} % убираем нумерацию секций, подсекций и т.д.
+
+
+%%%%%%%%%%%
+% блок для тестов
+%%%%%%%%%%%
+% [1][3] 1 = one argument, 3 = value if missing
+% эта магия создаёт окружение answerlist
+% именно в окружении answerlist записаны варианты ответов в подключаемых exerciseXX
+% просто \begin{answerlist} сделает ответы в три столбца
+% если ответы длинные, то надо в них руками сделать
+% \begin{answerlist}[1] чтобы они шли в один столбец
+\newenvironment{answerlist}[1][3]{
+\begin{multicols}{#1}
+\begin{enumerate}[label=\fbox{\emph{\Alph*}},ref=\emph{\alph*}]
+}
+{
+\end{enumerate}
+\end{multicols}
+}
+
+
+\excludecomment{solution} % without solutions
+
+\theoremstyle{definition}
+
+% опция [subsection] для сброса счётчика вопросов после каждой subsection
+\newtheorem{question}{Вопрос}[subsection]
+
+% чтобы номер вопроса был без номера секции:
+\renewcommand{\thequestion}{\arabic{question}}
+% конец блока для тестов
+%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+\begin{document}
+\maketitle
+
+%\clearpage
+%\thispagestyle{empty}
+\tableofcontents{}
+
+
+\parindent=0 pt % no indent
+
+\clearpage
+\section*{Description}
+
+See updates at \url{https://github.com/bdemeshev/tssp_exams}.
+
+Click on red hyperlinks inside pdf, you can get to the answers and back!
+
+
+Any comments? Bugs?
+\url{https://github.com/bdemeshev/tssp_hse_exams/issues/}.
+
+
+\subsection*{Greatings to the contributors}
+
+Здесь перечислены стилевые особенности коллекции и самые популярные ошибки.
+Узнать технические подробности по теху можно, например,
+\href{http://www.ccas.ru/voron/download/voron05latex.pdf}{в учебнике} К.В. Воронцова.
+
+\begin{enumerate}
+
+\item Дробную часть числа отделяй от целой точкой: $3.14$ — хорошо, $3{,}14$ — плохо.
+Это нарушает русскую традицию, но облегчает копирование-вставку в любой программный пакет.
+\item Существует длинное тире, —, которое отличается от просто дефиса - и нужно,
+чтобы разделять части предложения, \href{https://ru.wikihow.com/напечатать-тире}{Инструкция
+в картинках по набору тире :)}
+\item Выключные формулы следует окружать \verb|\[|\ldots\verb|\]|. Никаких \$\$\ldots\$\$!
+\item Про остальные окружения: для системы уравнений подойдёт \verb|cases|,
+для формул на несколько строк – \verb|align*|, для нумерации – \verb|enumerate|.
+\item Русский текст внутри формулы нужно писать в \verb|\text{|\ldots\}.
+\item Для многоточий существует команда \verb|\ldots|.
+\item В преамбуле определены сокращения! Самые популярные: \verb|\P, \E, \Var, \Cov, \Corr, \cN|.
+\item Названия функций тоже идут со слэшем: \verb|\ln, \exp, \cos|\ldots
+\item Таблицы нужно оформлять по стандарту booktabs. Самый удобный способ сделать
+это – зайти на \href{https://www.tablesgenerator.com}{tablesgenerator} и выбрать
+там опцию booktabs table style вместо default table style.
+\item Уважай букву ё – ставь над ней точки! :)
+\item Начинай каждой предложение внутри теховского файла с новой строки.
+В готовом pdf предложения будут идти без разрыва, а читабельность теха повысится.
+\item В перечислениях после «Найдите» используй в качестве знаков препинания точки
+с запятой и точку в конце.
+\item Знак умножения пишем \verb|\cdot| и никаких \verb|*| :)
+\end{enumerate}
+
+% стандарт имени файла:
+% добавляется _sol в файле с решениями
+
+\input{chapters/october.tex}
+\input{chapters/december.tex}
+\input{chapters/april.tex}
+\input{chapters/final.tex}
+
+% \section{Ответы}
+\addcontentsline{toc}{section}{Answer, hints and solutions} % руками добавляем фейковую секцию Ответы в оглавление
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}% Allow only \chapter in ToC
+
+
+\input{chapters/october_sol.tex}
+\input{chapters/december_sol.tex}
+\input{chapters/april_sol.tex}
+\input{chapters/final_sol.tex}
+
+\end{document}

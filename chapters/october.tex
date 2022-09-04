@@ -1,0 +1,205 @@
+% !TEX root = ../tssp_exams.tex
+
+\newpage
+\thispagestyle{empty}
+\section{October}
+ 
+
+
+\subsection[2021-2022]{\hyperref[sec:sol_kr_01_2021_2022]{2021-2022}}
+\label{sec:kr_01_2021_2022} % \label{ссылка сюда}
+
+Short rules: 120 minutes, online without proctoring. You may use any source you want but don't cheat.
+
+Date: 2021-10-28
+
+\begin{enumerate}
+
+\item (10 points) Consider the Markov chain with the transition matrix
+\[
+  P = \begin{pmatrix}
+    0.2 & 0.2 & 0 & 0.6 \\
+    0.3 & 0.3 & 0.4 & 0 \\
+    0 & 0 & 0.1 & 0.9 \\
+    0 & 0 & 0.8 & 0.2 \\
+  \end{pmatrix}.
+\]
+
+\begin{enumerate}
+  \item (3 points) Split the chain in classes and classify them into closed or not closed.
+  \item (2 points) Classify the states into recurrent or transient.
+  \item (5 points) A Hedgehog starts in the state one and moves 
+  randomly between states according to the transition matrix.
+
+  What is the approximate probability that the Hedgehog will be in the 
+  state four after $10^{2021}$ moves?
+\end{enumerate}
+
+Note: state number is the row (or column) number.
+
+  \item (10 points) Gleb Zheglov catches one criminal every day. 
+  With probability $0.2$ the catched criminal is replaced by $w$ new criminals. 
+  Initially there are $n$ criminals in the town. 
+
+  What is the expected time to the ultimate crime eradication in the town?
+
+  \begin{enumerate}
+    \item (4 points) Solve the problem for $w=1$ and $n=1$.
+    \item (6 points) Solve the problem for arbitrary $w$ and $n$.
+  \end{enumerate}
+
+  \item (10 points) The random variables $X_i$ are independend and uniformly distributed on $[0;1]$.
+  Find the probability limit
+\[
+\plim_{n\to\infty}  \max \left\{ \frac{\sum_{i=1}^n X_i}{n}, \frac{2\sum_{i=1}^n X^2_i}{n} \right\}.
+\]
+
+
+\item (10 points) Taxis arrive to the station according to the Poisson process with rate 1 per 5 minutes. 
+
+Let $Y_t$ be the number of taxis that will arrive between 0 and $t$ minutes.
+
+\begin{enumerate}
+  \item (2 points) Sketch the expected value of $Y_t$ as a function of $t$.
+  \item (8 points) Sketch the probability $\P(Y_t = Y_{60})$ as a function of $t$.
+\end{enumerate}
+
+Note: special points like intercepts or extrema should be explicitely marked.
+
+\item (10 points) Prince Myshkin throws a fair coin until two consecutive heads appear. 
+Let $N$ be the number of throws. 
+
+Find the moment generating function of $N$. 
+
+Hint: you may use the first step approach.
+
+\item (20 points) Vincenzo Peruggia makes attempts to steal the Mona Lisa painting until the first 
+success. 
+Each attempt is successful with probability $0.1$.
+
+Let $X$ be the number of attempts and $Z = \min\{X, 5\}$.
+
+\begin{enumerate}
+  \item (5 points) How many events are in sigma-algebras $\sigma(Z)$ and $\sigma(X)$?
+  \item (5 points) If possible provide an example of events $A$ and $B$ such that: $A\in \sigma(Z)$ but $A\not\in\sigma(X)$; $B\in \sigma(X)$ but $B\not\in\sigma(Z)$.
+  \item (10 points) Find $\E(Z \mid X)$ and $\E(X \mid Z)$.
+\end{enumerate}
+
+
+
+
+
+
+\end{enumerate}
+    
+
+% \subsection[что идет в оглавление]{\hyperref[на что ссылка]{текст ссылки}}
+\subsection[2020-2021]{\hyperref[sec:sol_kr_01_2020_2021]{2020-2021}}
+\label{sec:kr_01_2020_2021} % \label{ссылка сюда}
+
+
+
+Here $(W_t)$ denotes the standard Wiener process.
+
+Date: 2020-10-30
+
+\begin{enumerate}
+    
+    
+    
+    \item For $r<s<t<u$ find the following expected values 
+    \begin{enumerate}
+    \item $\E((W_u - W_t)^2(W_s - W_r)^2)$;
+    \item $\E((W_u - W_s)(W_t - W_r))$;
+    \item $\E((W_t - W_r)(W_s - W_r)^2)$;
+    \item $\E(W_r W_s W_t)$;
+    \item $\E(W_r W_s W_t \mid W_s)$;
+    \end{enumerate}
+
+\item Consider Ito process $X_t$
+
+\[
+dX_t = \exp(t) W_t\, dt + \exp(2W_t) \, dW_t, \quad X_0 = 1.
+\]
+
+Consider two processes, $A_t = 1 + t^2 + X_t^3$ and $B_t = 1 + t^2 + X_t^3 W_t^4$.
+
+\begin{enumerate}
+    \item Find $dA_t$ and $dB_t$.
+    \item Write the corresponding explicit expressions for $A_t$ and $B_t$:
+    \[
+    const + \int_0^t \ldots dW_u + \int_0^t \ldots du
+    \]
+    \item Check whether $X_t$ is a martingale.
+\end{enumerate}
+
+\item Let $S_0 = 0$, $S_t = X_1 + X_2 + \ldots + X_t$. The increments $X_t$ are independent and identically distributed: 
+
+\begin{tabular}{cccc}
+\toprule
+$x$ & $-1$ & $0$ & $1$ \\
+$\P(X_t = x)$ & $0.2$ & $0.2$ & $0.6$ \\
+\bottomrule
+\end{tabular}
+
+\begin{enumerate}
+    \item If possible find all constants $a$ such that $M_t = S_t + at$ is a martingale.
+  \item If possible find all constants $b$ such that $R_t = b^{S_t}$ is a martingale.
+\end{enumerate}
+
+\item Consider the process $X_t$
+
+\[
+X_t= tW_t + \int_0^t uW_u^2\, dW_u.
+\]
+
+\begin{enumerate}
+    \item Find $\E(X_t)$, $\Var(X_t)$.
+    \item Find $dX_t$.
+    \item Check whether $X_t$ is a martingale.
+\end{enumerate}
+
+\item A Hedgehog in the fog starts in $(0, 0)$ at $t=0$ and moves randomly with equal probabilities in four directions (north, south, east, west) by one unit every minute. 
+
+Let $X_t$ and $Y_t$ be his coordinates after $t$ minutes and $S_t = X_t + Y_t$.
+
+\begin{enumerate}
+    \item Find $\E(X_2 \mid S_2)$;
+    \item Find $\Var(X_2 \mid S_2)$.
+\end{enumerate}
+
+Hint: $\Var(Y \mid X) = \E(Y^2 \mid X) - (\E(Y \mid X))^2$.
+
+    \item Vampire Petr and Markov Chains. 
+    
+    Vampire Petr drinks blood of a new victim every day. 
+    Unfortunately 20\% of the population are vaccinated against vampires. 
+    If more than one victim of the last three victims are vaccinated then Petr will be instantaneously cured and will return to the normal life. 
+ 
+    For simplicity let's assume that the last three victims were not vaccinated. 
+    
+    \begin{enumerate}
+        \item What is the probability that vampire Petr will be cured in the next three days?
+        \item How many victims will be bitten by vampire Petr on average?
+    \end{enumerate}
+ 
+    \item Vampire Boris and Martingales.
+    
+    To survive vampire Boris needs to bite 70 talented students. 
+    
+    These 70 talented students have formed a secret group. They have written their emails on small pieces of paper and have randomly distributed these pieces among them. Each student has exactly one piece of paper with an email\footnote{The group is so secret that it is possible that a student has his own email on his piece of paper}. 
+    
+    Initially vampire Boris knows contacts of just two persons from the group. Today he will contact them, drink their blood and get the emails they have. Then vampire Boris will contact new victims and so on.
+    
+    \begin{enumerate}
+        \item For $t\geq 1$ consider the process $M_t$, the proportion of non bitten students after the day $t$. 
+        
+        Is this process a martingale?
+        
+        \item Using martingale stopping theorem or otherwise find the probability that vampire Boris will bite all 70 students. 
+    \end{enumerate}
+ 
+ 
+\end{enumerate}
+
+

@@ -1,0 +1,123 @@
+% !TEX root = ../tssp_exams.tex
+
+\newpage
+\thispagestyle{empty}
+\section{Final exam solutions}
+ 
+
+
+\subsection[2021-2022]{\hyperref[sec:kr_04_2021_2022]{2021-2022}}
+\label{sec:sol_kr_04_2021_2022} % \label{ссылка сюда}
+
+
+
+\begin{enumerate}
+
+\item 
+
+
+\end{enumerate}
+    
+
+% \subsection[что идет в оглавление]{\hyperref[на что ссылка]{текст ссылки}}
+\subsection[2020-2021]{\hyperref[sec:kr_04_2020_2021]{2020-2021}}
+\label{sec:sol_kr_04_2020_2021} % \label{ссылка сюда}
+
+
+\begin{enumerate}
+\item Let's draw the chain
+
+\begin{center}
+\begin{tikzpicture}[->, >=stealth', auto, semithick, node distance=3cm]
+\tikzstyle{every state}=[fill=white,draw=black,thick,text=black,scale=1]
+\node[state]    (A)                     {$S$};
+\node[state]    (B)[right of=A]   {$6$};
+\node[state]    (C)[right of=B]   {$62$};
+\node[state]    (D)[right of=C]   {$626$};
+\path
+(A) edge[loop below]     node{}         (A)
+    edge                node{}     (B)
+(B) edge                node{}           (C)
+    edge[loop below]    node{}           (B)
+    edge[bend right]    node{}           (A)
+(C) edge                node{}           (D)
+    edge[bend right]                node{}           (B)
+    edge[bend right=40]         node{}           (A);
+\end{tikzpicture}
+\end{center}
+
+The system of equations for expected values:
+\[
+\begin{cases}
+x_s = 1 + \frac{1}{6} x_6 + \frac{5}{6} x_s \\
+x_6 = 1 + \frac{1}{6} x_6 + \frac{1}{6} x_{62}  + \frac{4}{6} x_s \\
+x_{62} = 1 + \frac{1}{6} \cdot 0 + \frac{1}{6} x_{6}  + \frac{4}{6} x_s \\
+\end{cases}    
+\]
+
+
+The system of equations for moment generating functions:
+\[
+\begin{cases}
+m_s(t) = \exp(t) \left(\frac{1}{6} m_6(t) + \frac{5}{6} m_s(t)\right) \\
+m_6(t) = \exp(t) \left( \frac{1}{6} m_6(t) + \frac{1}{6} m_{62}(t)  + \frac{4}{6} m_s(t)\right) \\
+m_{62}(t) = \exp(t) \left( \frac{1}{6} \cdot 1 + \frac{1}{6} m_{6}(t)  + \frac{4}{6} m_s(t) \right)\\
+\end{cases}    
+\]
+
+
+\item \begin{enumerate}
+    \item Let's denote by $x$ all available information, 
+    \[
+    x = \begin{pmatrix}
+        y_{100} \\
+        y_{99} \\
+        y_{98} \\
+        u_{99}
+    \end{pmatrix}    
+    \]
+    Let's use $t=100$:
+    \[
+    y_{100} = 1 + 0.5 y_{98} + u_{100} + u_{99}    
+    \]
+
+    Using all available information we obtain $u_{100}  = 1.5$ and hence
+    \[
+    y_{101} \mid x \sim  \cN(1 + 0.5 y_{99} + u_{100} ; 4)
+    \]
+
+    \item Here we work with true betas:
+    \[
+    \E(y_{101} \mid y_{100}) = \mu_y + \frac{\Cov(y_{100}, y_{101})}{\Var(y_{100})}(y_{100} - \mu_y)    
+    \]
+
+\end{enumerate}
+\item \begin{enumerate}
+    \item Moment generating function
+\[
+m_N(t) = \sum_{j=0} \exp(tj) (1-h)^j h = h \sum_{j=0} (\exp(t) (1-h))^j = \frac{h}{1 - \exp(t) (1 - h)}  
+\]
+\item As $S = N_1 + N_2 + \ldots + N_k$:
+\[
+m_S(t) =  \left( \frac{h}{1 - \exp(t) (1 - h)} \right)^k
+\]
+\item Due to my mistake the limit is easy, $0$. 
+
+In my dream it was $k\to \infty$, $k \cdot (1 - h) \to 0.5$ and that would be fun!
+
+\end{enumerate}
+
+\item \begin{enumerate}
+    \item Let's use Ito's lemma
+    \[
+    dX_t = f'(t) \cos (2021 W_t) dt - 2021 f(t) \sin (2021 W_t) dW_t + \frac{1}{2}2021^2 f(t) \cos(2021 W_t) dt    
+    \]
+    \item To make $X_t$ a martingale we should kill $dt$ term. 
+    \item As $X_t$ is martingale $\E(X_t) = \E(X_0) = f(0)$.
+    So $\E(\cos (2021 W_t)) = f(0) / f(t)$.
+\end{enumerate}
+
+\end{enumerate}
+
+
+
