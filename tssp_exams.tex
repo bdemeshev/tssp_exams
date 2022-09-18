@@ -318,32 +318,31 @@ Any comments? Bugs?
 
 \subsection*{Greatings to the contributors}
 
-Здесь перечислены стилевые особенности коллекции и самые популярные ошибки.
-Узнать технические подробности по теху можно, например,
-\href{http://www.ccas.ru/voron/download/voron05latex.pdf}{в учебнике} К.В. Воронцова.
+Here we describe only the style guidelines and typical erros. 
+For more information on tex one may read the 
+\href{http://www.ccas.ru/voron/download/voron05latex.pdf}{book} by K. Vorontsov.
 
 \begin{enumerate}
 
-\item Дробную часть числа отделяй от целой точкой: $3.14$ — хорошо, $3{,}14$ — плохо.
-Это нарушает русскую традицию, но облегчает копирование-вставку в любой программный пакет.
-\item Существует длинное тире, —, которое отличается от просто дефиса - и нужно,
-чтобы разделять части предложения, \href{https://ru.wikihow.com/напечатать-тире}{Инструкция
-в картинках по набору тире :)}
-\item Выключные формулы следует окружать \verb|\[|\ldots\verb|\]|. Никаких \$\$\ldots\$\$!
-\item Про остальные окружения: для системы уравнений подойдёт \verb|cases|,
-для формул на несколько строк – \verb|align*|, для нумерации – \verb|enumerate|.
+\item Use decimal point as a separator: $3.14$ — good style, $3{,}14$ — bad style.
+This goes against russian tradition, but favors copy-pasting numbers in software for computations. 
+% \item Существует длинное тире, —, которое отличается от просто дефиса - и нужно,
+% чтобы разделять части предложения, \href{https://ru.wikihow.com/напечатать-тире}{Инструкция
+% в картинках по набору тире :)}
+\item Use \verb|\[|\ldots\verb|\]| for display math formulas. Do not use \$\$\ldots\$\$!
+\item Use \verb|cases| for systems of equations,
+\verb|align*| for multiline formulas, \verb|enumerate| for enumerations.
 \item Inside formulas use \verb|\text{|\ldots\} to write text.
-\item Для многоточий существует команда \verb|\ldots|.
+\item Use \verb|\ldots| for ellipsis.
 \item You can find useful macros in the preamble, like \verb|\P, \E, \Var, \Cov, \Corr, \cN|.
-\item Названия функций тоже идут со слэшем: \verb|\ln, \exp, \cos|\ldots
-\item Таблицы нужно оформлять по стандарту booktabs. Самый удобный способ сделать
-это – зайти на \href{https://www.tablesgenerator.com}{tablesgenerator} и выбрать
-там опцию booktabs table style вместо default table style.
-\item Уважай букву ё – ставь над ней точки! :)
-\item Начинай каждой предложение внутри теховского файла с новой строки.
-В готовом pdf предложения будут идти без разрыва, а читабельность теха повысится.
-\item В перечислениях после «Найдите» используй в качестве знаков препинания точки
-с запятой и точку в конце.
+\item Use backslash before functions: \verb|\ln, \exp, \cos|\ldots
+\item Use booktabs style for tables. You may use online \href{https://www.tablesgenerator.com}{tablesgenerator}. 
+Choose booktabs table style instead of default table style.
+\item Respect the letter ё! :)
+\item Start every sentence in tex source from a new line. 
+There will be no additional newlines in final pdf but tex file will be easier to read.
+% \item В перечислениях после «Найдите» используй в качестве знаков препинания точки
+% с запятой и точку в конце.
 \item For multiplication use \verb|\cdot|. Please never use \verb|*| :)
 \end{enumerate}
 
