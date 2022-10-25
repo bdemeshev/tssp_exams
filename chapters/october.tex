@@ -91,7 +91,95 @@ Let $X$ be the number of attempts and $Z = \min\{X, 5\}$.
 
 
 \end{enumerate}
-    
+
+
+
+% \subsection[что идет в оглавление]{\hyperref[на что ссылка]{текст ссылки}}
+\subsection[2021-2022 retake]{\hyperref[sec:sol_kr_01_2021_2022_retake]{2021-2022 retake}}
+\label{sec:kr_01_2021_2022_retake} % \label{ссылка сюда}
+
+
+Short rules: 120 minutes, online without proctoring. You may use any source you want but don't cheat.
+
+\begin{enumerate}
+
+\item (10 points) Consider the Markov chain with the transition matrix
+\[
+  P = \begin{pmatrix}
+    0.2 & 0.2 & 0 & 0.6 & 0 \\
+    0.3 & 0.3 & 0.4 & 0 & 0\\
+    0 & 0 & 0.3 & 0.7 & 0 \\
+    0 & 0 & 0.8 & 0.2 & 0 \\
+    0 & 0 & 0 & 0 & 1 \\
+  \end{pmatrix}.
+\]
+
+\begin{enumerate}
+  \item (3 points) Split the chain in classes and classify them into closed or not closed.
+  \item (2 points) Classify the states into recurrent or transient.
+  \item (5 points) A Hedgehog starts in the state one and moves 
+  randomly between states according to the transition matrix.
+
+  What is the approximate probability that the Hedgehog will be in the 
+  state four after $10^{2021}$ moves?
+\end{enumerate}
+
+Note: state number is the row (or column) number.
+
+  \item (10 points) Consider infinite ladder with steps numbered from $0$ to infinity. 
+  I start at step $0$. Every day with probability $u$ I go one step up.
+  With probability $d$ I go one step down. With probability $1-u-d$ I stay on the same step.
+
+  If I am at step $0$ then I stay there with probability $1-u$ because it's impossible to go down. 
+
+  Consider the case $d>u$. 
+  
+  What is the probability that I will be at step $0$ after $10^{1000}$ days?
+
+  \item (10 points) The random variables $X_i$ are independend and uniformly distributed on $[0;2]$.
+  Find the probability limit
+\[
+\plim_{n\to\infty}  \max \left\{ \frac{\sum_{i=1}^{10} X_i}{n}, \frac{\sum_{i=1}^n X^3_i}{n+1} \right\}.
+\]
+
+
+\item (10 points) Taxis arrive to the station according to the Poisson process with rate 1 per 5 minutes. 
+
+Let $Y_t$ be the number of taxis that will arrive between 0 and $t$ minutes.
+
+\begin{enumerate}
+  \item (5 points) Sketch the probability $\P(Y_{t+3} = 1 \mid Y_t = 0)$ as a function of $t$.
+  \item (5 points) Sketch the covariance $\Cov(Y_t, Y_{60})$ as a function of $t$.
+\end{enumerate}
+
+Note: special points like intercepts or extrema should be explicitely marked.
+
+\item (10 points) The moment generating function of a random variable $X$ is $1/(1-2t)$.
+\begin{enumerate}
+    \item Find the moment generating function of $2X$.
+    \item Find the moment generating function of $X + Y$ where $X$ and $Y$ are independent and identically distributed.
+    \item Do you remember the sum of geometric progression? Find $\E(X^{2021})$.
+\end{enumerate}
+
+\item (20 points) Variables $X_1$, $X_2$, \ldots $X_{100}$ are independent and identically distributed
+with mean $1$ and variance $2$. Each $X_i$ has only three possible values: 0, 1, and 2. 
+
+\begin{enumerate}
+  \item (5 points) How many events are in sigma-algebras $\sigma(X_1, X_2)$ and $\sigma(X_1 - X_2)$?
+  \item (5 points) If possible provide an example of events $A$ and $B$ such that: $A\in \sigma(X_1, X_2)$ but $A\not\in\sigma(X_1 - X_2)$; $B\in \sigma(X_1 - X_2)$ but $B\not\in\sigma(X_1, X_2)$.
+  \item (10 points) Find $\E(X_1 + \ldots + X_{100} \mid X_1 + \ldots + X_{50})$ and $\E(X_1 + \ldots + X_{50} \mid X_1 + \ldots + X_{100})$.
+\end{enumerate}
+
+
+
+
+
+
+\end{enumerate}
+
+
+
+
 
 % \subsection[что идет в оглавление]{\hyperref[на что ссылка]{текст ссылки}}
 \subsection[2020-2021]{\hyperref[sec:sol_kr_01_2020_2021]{2020-2021}}
