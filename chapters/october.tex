@@ -3,7 +3,77 @@
 \newpage
 \thispagestyle{empty}
 \section{October exam}
- 
+
+\subsection[2022-2023]{\hyperref[sec:sol_kr_01_2022_2023]{2022-2023}}
+\label{sec:kr_01_2022_2023} % \label{ссылка сюда}
+
+Short rules: 120 minutes, online and offline. You may use one A4 cheat sheet.
+
+Date: 2022-10-29
+
+\begin{enumerate}
+
+  \item {[10]} The random variables $X_i$ are independend and uniformly distributed on $[0;2]$.
+  Find 
+      \[
+      \plim_{n\to\infty}  \frac{(X_1 - \bar X)^3 + (X_2 - \bar X)^3 + \ldots + (X_n - \bar X)^3}{n + 2022}.
+      \]
+      
+  
+  \item A Hedgehog starts at the point $x=2$ on the real line. 
+  Every minute he moves one step left with probability $0.3$ or one step right with probability $0.7$.
+  There are two exceptions from this rule: the absorbing point $x=0$ and the reflecting barrier at $x=3$.
+  
+  If the Hedgehog reaches the absorbing point $x=0$ then he stops moving and stays there. 
+  If the Hedgehog reaches the reflecting barrier $x=3$ then his next move will be one step left with probability $1$.
+  
+  \begin{enumerate}
+  \item {[2]} Write the transition matrix of this Markov chain. 
+  \item {[3]} What is the probability that Hedgehog will be at $x=1$ after exactly 3 steps?
+  \item {[5]} What is the expected time to reach the absorbing state?
+  \end{enumerate}
+  
+  
+  \item The random variables $X_i$ are independent and they take values $+1$ or $-1$ with equal probability. 
+  
+  \begin{enumerate}
+  \item {[3]} Explicitely list all the events in sigma-algebra $\sigma(X_1 \cdot X_2)$.
+  \item {[3]} Pavel says that he knows only whether $X_1$ and $X_3$ are equal. 
+  How will you describe his knowledge with sigma-algebra?
+  \item {[4]} How many events are in the sigma-algebra $\sigma(X_1, X_1 + X_2, X_1 + X_2 + X_3)$?
+  \end{enumerate}
+  
+  
+  \item Masha receives on average 10 sms per minute. Sms arrival is well described by the Poisson process. 
+  
+  \begin{enumerate}
+  \item {[3]} What is the probability that Masha receives exactly 10 sms in the next 40 seconds?
+  \item {[3]} Masha just received an sms. What is the probability that she will wait more that 2.5 seconds before the next one?
+  \item {[4]} Find the covariance between the number of sms in the first 3 minutes and the number of sms in the first 10 minutes. 
+  \end{enumerate}
+  
+  
+  \item The random variables $X_i$ are independent and they take values $+1$ or $-1$ with equal probability. 
+  
+  \begin{enumerate}
+  \item {[3]} Find $\E(X_3 \mid X_1, X_2)$, $\E(X_3 \mid X_1 + X_3)$.
+  \item {[3]} Find $\Var(X_3 \mid X_1, X_2, X_3)$, $\Var(X_3 \mid X_1 + X_3)$.
+  \item {[4]} Let $Y_n$ be equal to $\E(X_1 + \ldots +  X_{2022} \mid X_1, X_2, \ldots, X_n)$. \newline
+  Is the process $Y_1$, $Y_2$, \ldots, $Y_{2022}$ a martingale?
+  \end{enumerate}
+  
+  
+  \item Consider a Wiener process $(W_t)$.
+  \begin{enumerate}
+      \item {[4]} Let $Y_t = t W_{2t}$. What is the distribution of $Y_t - Y_s$ for $t\geq s$? Is $Y_t$ a Wiener process?
+      \item {[6]} Find a constant $\alpha$ such that $M_t = W_t^3 + \alpha t W_t$ is a martingale. 
+  \end{enumerate}
+  
+  
+  
+  \end{enumerate}
+  
+
 
 
 \subsection[2021-2022]{\hyperref[sec:sol_kr_01_2021_2022]{2021-2022}}
