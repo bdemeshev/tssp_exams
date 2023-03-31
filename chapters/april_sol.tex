@@ -5,6 +5,130 @@
 \section{April exam solutions}
  
 
+\subsection[2022-2023]{\hyperref[sec:kr_03_2022_2023]{2022-2023}}
+\label{sec:sol_kr_03_2023_2023} % \label{ссылка сюда}
+
+\begin{enumerate}
+    \item 
+\begin{enumerate}
+    \item {[6 points]}
+    \[
+        y_{102}= \ell_{100} + (0.9 + 0.9^2) b_{100} + (0.3 + 0.18)u_{101} + u_{102}    
+        \]
+        The interval
+        \[
+        [21.71 - 1.96 \sqrt{4.96};21.71 + 1.96 \sqrt{4.96}]    
+        \]
+    \item {[4 points]}
+    \[
+    \lim_{h\to\infty} \E(y_{100+h} \mid y_1, \ldots, y_{100}) = \ell_{100} + (0.9 + 0.9^2 +\ldots) b_{100} = 20 + 9\cdot 1    
+    \]    
+\end{enumerate}
+\item 
+\begin{enumerate}
+    \item {[2 points]} $\lambda_1 = 0.3$, $\lambda_2 = 0.4$, one stationary solution, infinitely many non-stationary solutions. 
+    \item {[6 points]}: {[2 points] for the system} + {[2 points] for $\rho_1$} + {[2 points] for $\rho_2$}.
+    \[
+        \begin{cases}
+            \gamma_1 = 0.7 \gamma_0  - 0.12 \gamma_1 \\
+            \gamma_2 = 0.7 \gamma_1 - 0.12 \gamma_0. 
+        \end{cases}
+    \]
+    \[
+    \rho_1 = 70/112 = 0.625, \quad \rho_2 = 49/112 - 0.12 = 0.3175    
+    \]
+    \item {[2 points]}
+    \[
+    \alpha_1 = 0.7, \quad \alpha_2 = 0.37    
+    \]
+\end{enumerate}
+\item 
+\begin{enumerate}
+    \item {[4 points]}
+    \[
+    \sigma^2_{101} = 3 + 0.5 (-1)^2= 3.5    
+    \]
+    \[
+    (u_{101}\mid \sigma_{101}) \sim \cN(0; \sigma^2_{101})    
+    \]
+    \[
+    [-1.96 \sqrt{3.5}; +1.96 \sqrt{3.5}]    
+    \]
+    \item {[3 points]} {[1 point]} for $\E(u_t)$ and {[2 points]} for $\Var(u_t)$ 
+    The process $(u_t)$ is a white noise, hence
+    \[
+    \E(u_t) = 0.    
+    \]
+    \[
+    \sigma^2_u = 3 + 0.5 \cdot \sigma^2_u    
+    \]
+    \item {[3 points]}: {[1 point]} for $\Corr(u_t, u_{t-1})$ and {[2 points]} for $\Corr(u_t^2, u_{t-1}^2)$ 
+    The process $(u_t)$ is a white noise, hence
+    \[
+    \Corr(u_t, u_{t-1}) = 0.    
+    \]
+    \[
+    u_t^2 = 3 + 0.5 u_{t-1}^2 + (u_t^2 - \sigma_t^2)    
+    \]
+    We notice that $r_t = u_t^2 - \sigma_t^2$ is a white noise, hence $u_t^2$ is an $AR(1)$ process.
+    Hence, $\Corr(u_t^2, u_{t-1}^2) = 0.5$.
+\end{enumerate}
+\item 
+\begin{enumerate}
+    \item {[5 points]}
+    \[
+    L = const (0.2 + a)^{N_1} (0.3 - a)^{N_2} 0.5^{N_3}    
+    \]
+    \[
+    \ell = const + N_1 \ln (0.2 +a) + N_2\ln(0.3 - a) + N_3 \ln 0.5    
+    \]
+    \[
+    \frac{\partial \ell}{\partial a} = \frac{N_1}{0.2 + a} - \frac{N_2}{0.3 - a} 
+    \]
+    \[
+    \hat{a}_{ML} = \frac{0.3 N_1 - 0.2 N_2}{N_1 + N_2}    
+    \]
+    We see that $\partial \ell /\partial a$ decreases as $a$ increases, so 
+    $\hat{a}_{ML}$ is indeed the point of maximum. 
+    \item {[5 points]}
+    \[
+    \E(Y_i) = (0.2 + a) + 2(0.3 - a) + 4\cdot 0.5 = 2.8 -a    
+    \]
+    \[
+    \bar Y = \frac{N_1 + 2N_2  + 4N_4}{N_1 + N_2  + N_4}    
+    \]
+    \[
+    \hat a_{MM} = 2.8 - \frac{N_1 + 2N_2  + 4N_4}{N_1 + N_2  + N_4}
+    \]
+\end{enumerate}
+\item 
+\begin{enumerate}
+    \item {[6 points]}
+    \[
+    \P(\hat \theta > y) = \P(Y_1 > y/n)^n = \left( \exp(-y/n\theta) \right)^n = \exp(-y/\theta)
+    \]
+    Hence $\hat\theta$ has exponential distribution with rate $1/\theta$ and 
+    probability density function
+    \[
+    f(t) = \begin{cases}
+        \exp(-t/\theta)/\theta, \text{ if } t\geq 0, \\
+        0, \text{ otherwise}.
+    \end{cases}
+    \]
+    \item {[2 points]}
+    
+    The estimator is unbiased as
+    \[
+    \E(\hat\theta) = 1/(1/\theta) = \theta.    
+    \]
+    \item {[2 points]}
+    
+    The estimator is non consistent as its distribution does not depend on $n$.
+\end{enumerate}
+
+\end{enumerate}
+
+
 
 \subsection[2021-2022]{\hyperref[sec:kr_03_2021_2022]{2021-2022}}
 \label{sec:sol_kr_03_2021_2022} % \label{ссылка сюда}
