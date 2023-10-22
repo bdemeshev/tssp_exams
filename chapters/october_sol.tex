@@ -11,9 +11,7 @@
 
 
 \begin{enumerate}
-    \item  $\P(A \to B) = 0.7$, 
-    $\P(A \to C) = 0.3$, $\P(B \to C) = \P(B \to A) = 0.5$,  $\P(C \to B) = \P(C \to A) = 0.5$.
-  
+    \item   
     \begin{enumerate}
       \item $\P(S_3 = B) = \P(A\to B\to A\to B) + \P(A\to C\to A\to B) + \P(A\to B\to C\to B)$
       \item 
@@ -47,8 +45,8 @@
       M_X(u) = \int_0^1 \exp(xu) \cdot 1 \, dx = \frac{\exp(u) - 1}{u}; 
       \]
       Hence $M_{S\mid N}(u) = (M_X(u))^N$ as $S$ is the sum of $N$ independent variables.
-      \item $M_S(u) = \P(N=1)(M_X(u))^1 + \P(N=2)(M_X(u))^2 + \ldots = \frac{0.7 M_X(u)}{ 1 -0.3M_X(u)}$.
-      \item Moment generating function is used to calculate moments, $M_S''(0) - (M_S'(0))^2 = \Var(S)$
+      \item Random variable $N$ is discrete, $M_S(u) = \P(N=1)(M_X(u))^1 + \P(N=2)(M_X(u))^2 + \ldots = \frac{0.7 M_X(u)}{ 1 -0.3M_X(u)}$.
+      \item Moment generating function is used to calculate moments, $M_S''(0) - (M_S'(0))^2 = \Var(S)$.
     \end{enumerate}
   
 
