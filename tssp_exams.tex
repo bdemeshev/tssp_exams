@@ -36,7 +36,8 @@ top=15mm,
 bottom=13.5mm,
 left=13mm, right=13mm, includefoot]{geometry}
 
-\usepackage{etex} % расширение классического tex
+%\usepackage{etex} % расширение классического tex
+% extended allocation already in use?
 % в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
 
 
@@ -97,6 +98,11 @@ left=13mm, right=13mm, includefoot]{geometry}
 \usetikzlibrary{arrows} % прибамбас в нем для рисовки стрелочек подлиннее
 \usetikzlibrary{automata, arrows, positioning, calc}
 \usepackage{tikz-qtree} % прибамбас в нем для рисовки деревьев
+
+\pgfplotsset{compat=1.18} 
+% otherwise we get message 
+% running in backwards compatibility mode (unsuitable tick labels; missing features). 
+
 
 
 

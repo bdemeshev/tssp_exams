@@ -5,6 +5,92 @@
 \section{October exam solutions}
 
 
+
+\subsection[2023-2024]{\hyperref[sec:kr_01_2023_2024]{2023-2024}}
+\label{sec:sol_kr_01_2023_2024} % \label{ссылка сюда}
+
+
+\begin{enumerate}
+    \item  $\P(A \to B) = 0.7$, 
+    $\P(A \to C) = 0.3$, $\P(B \to C) = \P(B \to A) = 0.5$,  $\P(C \to B) = \P(C \to A) = 0.5$.
+  
+    \begin{enumerate}
+      \item $\P(S_3 = B) = \P(A\to B\to A\to B) + \P(A\to C\to A\to B) + \P(A\to B\to C\to B)$
+      \item 
+      \[
+      \begin{pmatrix}
+        0 & 0.7 & 0.3 \\
+        0.5 & 0 & 0.5 \\
+        0.5 & 0.5 & 0 \\
+      \end{pmatrix}  
+      \]
+      \item 
+      \[
+      \begin{cases}
+        a = 0.5 b + 0.5 c \\
+        b = 0.7 a + 0.5 c \\
+        c = 0.3 a + 0.5 b \\
+        a + b + c = 1  
+      \end{cases}
+      \]
+      The solution is $a= 15/45$, $b=17/45$, $c=13/45$.
+    \end{enumerate}
+    
+
+
+    \item
+  
+    \begin{enumerate}
+      \item Consider $N$ as known fixed value, $\E(S \mid N) = N\E(X_1) = N\cdot 0.5$.
+      First, let's find moment generating funciton for $X_i$:
+      \[
+      M_X(u) = \int_0^1 \exp(xu) \cdot 1 \, dx = \frac{\exp(u) - 1}{u}; 
+      \]
+      Hence $M_{S\mid N}(u) = (M_X(u))^N$ as $S$ is the sum of $N$ independent variables.
+      \item $M_S(u) = \P(N=1)(M_X(u))^1 + \P(N=2)(M_X(u))^2 + \ldots = \frac{0.7 M_X(u)}{ 1 -0.3M_X(u)}$.
+      \item Moment generating function is used to calculate moments, $M_S''(0) - (M_S'(0))^2 = \Var(S)$
+    \end{enumerate}
+  
+
+    
+    \item 
+    Start with $X_0$: $\E(X_0) = 1$, $\Var(X_0) = 4/12 = 1/3$.
+
+    \begin{enumerate}
+      \item Expected value is constant, $\E(X_n) = 0.5 + 0.5 \E(X_{n-1})$, hence $\E(X_n) = 1$. 
+      Variance goes to zero, $\Var(X_n) = 0.25 \Var(X_{n-1})$.
+      \item $\plim X_n = 1$
+    \end{enumerate}
+    
+    \item 
+    Let's measure time in minutes. 
+    \begin{enumerate}
+      \item $\P(X_5 = 0) = \exp(-5 \lambda) = 0.05$, so $\lambda = \ln (0.05) / -5 = \ln(20) /5$.
+      \item $\E(X_{180}) = 180 \lambda$, $\Var(X_{180}) = 180\lambda$
+      \item $\P(X_{180} = 5) = \exp(-180 \lambda) (180\lambda)^5/5!$
+    \end{enumerate}
+  
+    \item 
+    \begin{enumerate}
+      \item $Y = IX_1 + (1-I)X_2$
+      \item Consider $I$ as known or fixed variable, $\E(Y \mid I) = I\E(X_1) + (1 - I)\E(X_2)$.
+      Note that $I^2 = I$ and $(1-I)^2 = 1-I$, hence $\Var(Y \mid I) = I\Var(X_1) + (1-I)\Var(X_2)$.
+      \item $\E(Y) = p \mu_1 + (1-p) \mu_2$ and $\Var(Y) = p(1-p)(\mu_1 - \mu_2)^2 + p\sigma^2_1 + (1-p)\sigma^2_2$,
+      where $p = 0.3$, $\mu_1 = \sigma_1^2= 1$, $\mu_2 = \sigma_2^2 =2$.
+    \end{enumerate}
+  
+    \item 
+      \begin{enumerate}
+       \item 
+       Sigma-algebra: $\sigma(X) = \{\emptyset, \Omega, \{X=-2\},  \{X=0\},  \{X=2\},  \{X\neq -2\},  \{X\neq 0\},  \{X\neq 2\}\}$.
+       Other descriptions are possible, for example, one may replace $\{X = -2\}$ by $\{X < 0\}$.
+       \item Random variable $XY$ takes 3 distinct values, hence $\card \sigma(X \cdot Y) = 2^3 = 8$.
+      \end{enumerate}
+      
+  \end{enumerate}
+  
+
+
 % \subsection[что идет в оглавление]{\hyperref[на что ссылка]{текст ссылки}}
 \subsection[2022-2023]{\hyperref[sec:kr_01_2022_2023]{2022-2023}}
 \label{sec:sol_kr_01_2022_2023} % \label{ссылка сюда}
