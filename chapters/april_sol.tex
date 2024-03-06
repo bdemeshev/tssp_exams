@@ -3,7 +3,38 @@
 \newpage
 \thispagestyle{empty}
 \section{April exam solutions}
- 
+
+\subsection[2023-2024]{\hyperref[sec:kr_03_2023_2024]{2023-2024}}
+\label{sec:sol_kr_03_2023_2024} % \label{ссылка сюда}
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $\E(y_t) = 5$
+        \item $\rho_3 = \rho_4 = \ldots = 0$
+        \item The process is stationary.
+    \end{enumerate}
+    \item 
+    \item 
+    \begin{enumerate}
+        \item $\phi_{11} = \rho_1 = 0.2$, $\phi_{22} = 0$
+        \item Possible equation is $y_t = 0.2 y_{t-1} + u_t$. 
+        Another possibility is $y_t = 5 y_{t-1} + u_t$. 
+        In the second case the stationary solution will be forward-looking and not $MA(\infty)$ with respect to $(u_t)$.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $\lambda_1 = 2$, $\lambda_2 = 0.5$, here the roots of the lag polynomial are exactly the same. 
+        \item $(1 - 2L)(1 - 0.5L) (y_t + 10) = u_t$
+        \item The equation has infinitely many non-stationary solutions.
+        \item The equation has unique stationary solution.
+        \item The equation has no stationary solutions that are $MA(\infty)$ with respect to $(u_t)$.
+    \end{enumerate}
+    \item 
+    \item The process is not stationary as $\E(y_1) = 3$ and $\E(y_2) = -3$.
+
+\end{enumerate}
+
 
 \subsection[2022-2023]{\hyperref[sec:kr_03_2022_2023]{2022-2023}}
 \label{sec:sol_kr_03_2022_2023} % \label{ссылка сюда}
@@ -142,6 +173,20 @@
 
 \item 
 
+\item 
+\begin{enumerate}
+    \item Yes, the process is stationary, that is $MA(2)$ process. 
+    \item $\rho_3 = \rho_4 = \ldots = 0$
+    \item $d_t = u_t + u_{t-1} + 2u_{t-2} - u_{t-1} - u_{t-2} - 2 u_{t-3}$, hence $d_t \sim ARIMA(0, 0, 3)$.
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+    \item 
+    \item $\phi_{11} = \rho_1$, $\phi_{22} = -0.2$, $\phi_{33} = \phi_{44} = \ldots = 0$. 
+    The partial correlation $\phi_{22}$ measures how will $y_t$ on average react to the unit change of $y_{t-2}$ given fixed $y_{t-1}$.
+    \item $\rho_{100} = -0.9 \rho_{99} - 0.2 \rho_{98}$
+\end{enumerate}
 
 \end{enumerate}
     
