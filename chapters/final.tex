@@ -3,7 +3,88 @@
 \newpage
 \thispagestyle{empty}
 \section{Final exam}
- 
+
+\subsection[2022-2023]{\hyperref[sec:sol_kr_04_2022_2023]{2022-2023}}
+\label{sec:kr_04_2022_2023} % \label{ссылка сюда}
+
+Short rules: 120 minutes, you may use one A4 cheat-sheet, offline +  online.
+
+Notes: $W_t$ denotes the standard Wiener process, 
+you may use standard normal cumulative distribution function in your answers.
+
+Date: Balalayka day, 2023-06-23.
+
+\begin{enumerate}
+
+\item The weight of a fish $Y_i$ is a discrete random variables with 
+distribution and observed frequencies given in the table 
+
+\begin{tabular}{cccc}
+    \toprule
+    Weight [kg] & 1 & 2 & $a$ \\
+    Probability & $0.2 + 0.1a$ & $0.3 - 0.1a$ & $0.5$ \\
+    Observed frequency & $N_1$ & $N_2$ & $N_a$ \\
+    \bottomrule
+\end{tabular}
+
+Fish weights $Y_i$ are independent, $a > 10$ is unknown. 
+
+\begin{enumerate}
+    \item Find the method of moments estimator of the parameter $a$. 
+    \item Find the maximum likelihood estimator of the parameter $a$. 
+\end{enumerate}
+
+
+\item The $ETS(AAdN)$ model is given by the system
+    \[
+    \begin{cases}
+    u_t  \sim \mathcal{N}(0;20) \\
+    b_t = 0.9 b_{t-1} + 0.2 u_t \\
+    \ell_t = \ell_{t-1} + 0.9 b_{t-1} + 0.3 u_t \\
+    y_t = \ell_{t-1} + 0.9 b_{t-1} + u_t \\
+    \end{cases}
+    \]
+    with $\ell_{100} = 20$ and $b_{100} = 2$.
+\begin{enumerate}
+    \item Find conditional probability $\P(y_{102} > 30 \mid \ell_{100}, b_{100})$.
+    \item Approximately find the best point forecast for $y_{10000}$.
+\end{enumerate}
+    
+\item Stochastic process $X_t$ is defined by $X_t = 7 + u_t + 0.3 u_{t-1}$, where $(u_t)$ is a white noise 
+with variance $\sigma^2$.
+\begin{enumerate}
+    \item Is $(X_t)$ stationary? 
+    \item Find the autocorrelation function of $(X_t)$.
+    \item Find $\E(X_{t+2} \mid X_t, X_{t-1}, \ldots)$.
+\end{enumerate}
+
+\item Consider the process $X_t = \int_0^t W_u^2 dW_u + \int_0^t (W_u^2 + 2W_u u ) du - W_t^2 \cdot t$.
+
+\begin{enumerate}
+    \item Find $dX_t$ and the corresponding full form. 
+    \item Is $X_t$ a martingale?
+    \item Find $\E(X_t)$.
+\end{enumerate}
+
+
+\item Consider the Black and Scholes model with riskless rate $r$, volatility $\sigma$ and initial share price $S_0$. 
+
+Find the current price $X_0$ of an option that pays you one dollar at time $T=2$ only if $S_2 > \exp(3r) S_0$.
+
+\item A hedgehog moves at random on the vertices $A$, $B$, $C$ and $D$ of a regular tetrahedron (тетраэдр).
+She start at the vertex $A$ and every minute changes her position to one of the adjacent vertices with probability $1/3$
+independently of past moves. 
+
+\begin{enumerate}
+    \item Write down the transition matrix of this Markov chain. 
+    \item What is the expected time of the first return to the starting vertex $A$?
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+
 
 
 \subsection[2021-2022]{\hyperref[sec:sol_kr_04_2021_2022]{2021-2022}}
