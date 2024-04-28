@@ -4,6 +4,86 @@
 \thispagestyle{empty}
 \section{Final exam}
 
+\subsection[2023-2024]{\hyperref[sec:sol_kr_04_2023_2024]{2023-2024}}
+\label{sec:kr_04_2023_2024} % \label{ссылка сюда}
+
+Short rules: 120 minutes, you may use one A4 cheat-sheet, offline
+
+Date: 2024-04-27
+
+\begin{enumerate}
+    \item The variables $X_1$, \ldots, $X_n$ are independent identically distributed with density 
+    \[
+    f(x) = \begin{cases}
+      \lambda \exp(-\lambda (x - \theta)), \text{ if } x\geq \theta \\
+      0, \text{ otherwise}.
+    \end{cases}  
+    \]
+    \begin{enumerate}
+      \item {[5]} Find the method of moments estimator of $\lambda$ for known value $\theta = 1$ using the first moment. 
+      \item {[5]} Find the method of moments estimator of $\lambda$ for unknown value $\theta$ using the first two moments. 
+    \end{enumerate}
+
+    \item {[10]} The variables $X_1$, \ldots, $X_n$ are independent and normally distributed $\cN(a, 2a)$.
+  
+    Find the maximum likelihood estimator of $a$.
+  
+    Hint: $f(x) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp(-(x-\mu)^2/2\sigma^2)$.
+
+    \item The variables $X_1$, \ldots, $X_n$ are independent and uniformly distributed $\dUnif[0;a]$ with $a>1$.
+    We do not observe $X_i$ directly but we know whether each $X_i$ is larger than 1. 
+    Hence we observe the indicators $Y_i = I(X_i > 1)$.
+  
+    Consider the estimator $\hat a = 1 / (1 - \bar Y)$.
+  
+    \begin{enumerate}
+      \item {[5]} Is $\hat a$ consistent?
+      \item {[5]} Is $\hat a$ unbiased for $n=2$?
+    \end{enumerate}
+
+    \item The variables $X_1$, \ldots, $X_n$ are independent and have Poisson distribution with intensity rate $\lambda$.
+    In other words the probability mass function is given by $\P(X_i = k) = \exp(-\lambda) \lambda^k / k!$.
+    
+    \begin{enumerate}
+      \item {[5]} Find theoretical Fisher information for $\lambda$ contained in the sample. 
+      \item {[2]} Derive the maximum likelihood estimator for $\lambda$.
+      \item {[3]} Does the maximum likelihood estimator attain the Cramer-Rao lower bound for variance? 
+    \end{enumerate}
+
+    \item {[10]} The variables $X_1$, \ldots, $X_n$ are independent and gamma distributed with density
+    \[
+    f(x) = \begin{cases}
+      \lambda^\alpha x^{\alpha - 1} \exp(-\lambda x) / \Gamma(\alpha), \text{ if } x\geq 0 \\
+      0, \text{ otherwise}.
+    \end{cases}  
+    \]
+    \begin{enumerate}
+      \item {[5]} Find a sufficient statistic for $\alpha$ if we know that $\lambda = 1$. 
+      \item {[5]} Find a two dimensional sufficient statistic for unknown $\alpha$ and $\lambda$. 
+    \end{enumerate}
+
+    \item We have two independent random samples $X_1$, $X_2$, \ldots, $X_{n_x}$ and $Y_1$, $Y_2$, \ldots, $Y_{n_y}$.
+    The random variables $X_i$ follow Poisson distribution with intensity rate $\lambda_x$, 
+    random variables $Y_i$ follow Poisson distribution with intensity rate $\lambda_y$.
+  
+    We would like to test $H_0$: $\lambda_x = \lambda_y$ against $H_1$: $\lambda_x \neq \lambda_y$.
+  
+    \begin{enumerate}
+      \item {[3]} Find the maximal value of log-likelihood under $H_0$.
+      \item {[3]} Find the maximal value of log-likelihood under unrestricted model.
+      \item {[2]} Construct the likelihood ratio test. 
+      \item {[2]} Do you reject $H_0$ if $n_x = 100$, $n_y = 200$, $\sum x_i = 500$, $\sum y_i = 900$ at
+      significance level $5\%$?
+    \end{enumerate}
+  
+    Hint: chi-squared critical values for $\alpha = 0.05$ are $\chi^2_{df=1} = 3.84$, $\chi^2_{df=2} = 5.99$.
+  
+
+\end{enumerate}
+
+
+
+
 \subsection[2022-2023]{\hyperref[sec:sol_kr_04_2022_2023]{2022-2023}}
 \label{sec:kr_04_2022_2023} % \label{ссылка сюда}
 

@@ -3,7 +3,179 @@
 \newpage
 \thispagestyle{empty}
 \section{Final exam solutions}
- 
+
+
+\subsection[2023-2024]{\hyperref[sec:kr_04_2023_2024]{2023-2024}}
+\label{sec:sol_kr_04_2023_2024} % \label{ссылка сюда}
+
+
+
+\begin{enumerate}
+
+\item Let's observe that we may decompose $X_i$ as a sum $X_i = Y_i + \theta$,
+where $Y_i \sim \dExp(\lambda)$. 
+
+Hence, $\E(X_i) = 1/\lambda + \theta$, $\Var(X_i) = \Var(Y_i) = 1/\lambda^2$
+and $\E(X_i^2) = 1/\lambda^2 + (1/\lambda + \theta)^2$.
+
+There is an alternative solution with direct integration:
+\[
+\E(X_i) = \int_{\theta}^{+\infty} x f(x) \; dx, \quad \E(X_i^2) = \int_{\theta}^{+\infty} x^2 f(x) \; dx.
+\]
+
+\begin{enumerate}
+    \item Solving $1/\hat\lambda + 1 = \bar X$ we obtain $\hat\lambda = 1/ (\bar X - 1)$.
+    \item Solving for $\hat\lambda$ and $\hat\theta$ the system
+\[
+\begin{cases}
+    1/\hat\lambda + \hat \theta = \bar X \\
+    1/\hat\lambda^2 + (1/\hat\lambda + \hat\theta)^2 = M_2 \text{ with } M_2 = \sum X_i^2/n
+\end{cases}    
+\]
+we obtain 
+\[
+\hat \lambda = \frac{1}{\sqrt{M_2 - \bar X^2}} , \quad \hat \theta =  \bar X - \sqrt{M_2 - \bar X^2}   
+\]
+\end{enumerate}
+
+\item The log-likelihood function is equal to
+\[
+\ell(a) = \sum_{i=1}^n \left( (-0.5)\ln(4\pi) - 0.5 \ln a - (x_i - a)^2 / 4a \right).
+\]
+The equation $\ell'(a) = 0$ may be simplified to
+\[
+-2n\hat a + \sum X_i^2 - n\hat a^2 = 0    
+\]
+Hence, 
+\[
+\hat a = \frac{-2n \pm \sqrt{4 n^2 + 4na^2 \sum X_i^2}}{2n}
+\]
+We choose the root $\hat a > 0$ as $\Var(X_i) = 2a > 0$.
+\[
+\hat a = \frac{-2n + \sqrt{4 n^2  + 4na^2 \sum X_i^2}}{2n}    
+\]
+
+Just for fun. 
+In the case $X_i \sim \cN(a, ka)$ the equation would be
+\[
+-kn\hat a + \sum X_i^2 - n\hat a^2 = 0.    
+\]
+And 
+\[
+\hat a = \frac{-nk + \sqrt{k^2 n^2  + 4na^2 \sum X_i^2}}{2n}.    
+\]
+
+
+
+\item $\E(Y_i) = \P(X_i > 1) = (a-1) / a = p$.
+\begin{enumerate}
+    \item The estimator is consistent as
+\[
+\plim \hat a = \frac {1}{1- \plim \bar Y } = \frac{1}{1 - \frac{a-1}{a}} = a
+\]
+\item 
+For $n=2$ we have the positive probability $p^2$ that $\bar Y = 1$.
+Hence with positive probability $\hat a$ is not defined.
+The value $\E(\hat a)$ does not exist for $n=2$.
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item The log-likelihood function is equal to
+\[
+\ell(\lambda) = \sum_{i=1}^n \left( -\lambda + X_i \ln \lambda - \ln (X_i!)\right)    
+\]
+The score function is 
+\[
+\score(\lambda) = \ell'(\lambda) = \sum_{i=1}^n \left( -1 + X_i / \lambda\right).
+\]
+And
+\[
+\ell''(\lambda) = \sum_{i=1}^n \left(- X_i / \lambda^2 \right).
+\]
+Fisher information is 
+\[
+I_F = -\E(\ell''(\lambda)) = \sum \E(X_i) / \lambda^2 = n\lambda / \lambda^2 = n/\lambda.    
+\]
+
+\item Solving $\ell' = 0$ we obtain 
+\[
+\hat \lambda = \bar X    
+\] 
+
+\item Rewrite $\ell'(\lambda)$ using $\hat\lambda$. 
+Be careful! Do not confound $\lambda$ and $\hat\lambda$. 
+\[
+\score(\lambda) = \ell'(\lambda) = -n + n \hat \lambda / \lambda.
+\]
+Hence the score function is linear function of $\hat\lambda$, $\Corr(\score(\lambda), \hat\lambda) = 1$
+and the Cramer-Rao bound is attained. 
+
+\end{enumerate}
+
+\item We do not need the formula for $\Gamma(\alpha)$ here. 
+\begin{enumerate}
+    \item For known $\lambda = 1$ the likelihood is 
+    \[
+    L = \left(\prod X_i \right)^{\alpha - 1} \frac{1}{\Gamma(\alpha)} \cdot \exp( - \sum X_i).
+    \]
+    If we optimize this function for $\alpha$ the optimal $\hat\alpha$ will depend only on $\prod X_i$.
+    Hence $\prod X_i$ is a sufficient statistic for $\alpha$. 
+    There are many other sufficient statistics, $\sum \ln X_i$ is another example. 
+    \item Now the likelihood is 
+    \[
+    L = \left(\prod X_i \right)^{\alpha - 1} \frac{1}{\Gamma(\alpha)} \lambda^{\alpha }\exp( - \lambda \sum X_i).
+    \]
+    If we optimize this function for $\alpha$ and $\lambda$ the optimal point will depend only on $\prod X_i$ and $\sum X_i$.
+    Hence $\begin{pmatrix}
+        \prod X_i & \sum X_i 
+    \end{pmatrix}$ is a two dimensional sufficient statistic for $(\alpha, \lambda)$.
+    
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+    \item Under $H_0$ we have $X_i \sim \dPois(\lambda)$, $Y_i \sim \dPois(\lambda)$.
+    \[
+        \ell(\lambda) = \sum_{i=1}^{n_x} \left( -\lambda + X_i \ln \lambda - \ln (X_i!)\right) + 
+        \sum_{i=1}^{n_y} \left( -\lambda + Y_i \ln \lambda - \ln (Y_i!)\right)       
+    \]
+    The score function is 
+    \[
+    \score(\lambda) = \ell'(\lambda) = \sum_{i=1}^{n_x} \left( -1 + X_i / \lambda\right) + \sum_{i=1}^{n_y} \left( -1 + Y_i / \lambda\right).
+    \]
+    The estimator is $\hat \lambda = (\sum X_i + \sum Y_i) / (n_x + n_y)$.
+    \[
+    \max \ell_R = - \hat \lambda (n_x + n_y) + \left(\sum X_i + \sum Y_i \right)\ln \hat\lambda - \sum \ln X_i! - \sum \ln Y_i!    
+    \]
+    
+    \item In unrestricted model we have two independent estimators, 
+    \[
+    \hat \lambda_x = \bar X, \quad \hat \lambda_y = \bar Y    
+    \]
+    \[
+    \max \ell_{UR} = - \hat \lambda_x n_x + \sum X_i \ln \hat\lambda_x + \sum Y_i \ln \hat\lambda_y - \sum \ln X_i! - \sum \ln Y_i!    
+    \]
+
+    \item 
+    \[
+    LR = 2(\max \ell_{UR} - \max \ell_R) = 2 \sum X_i (\ln \hat \lambda_x - \ln \hat\lambda) + 2 \sum Y_i (\ln \hat \lambda_y - \ln \hat\lambda)
+    \]
+    \item Unrestricted model has two parameters, restricted model has one parameter, 
+    hence we use chi-squared disribution with $2 - 1 = 1$ degree of freedom, $LR_{\crit} = 3.84$.
+    We calculate estimates, $\hat \lambda_x = 5$, $\hat\lambda_y = 4.5$, $\hat\lambda = 14/3$.
+    
+    \[
+    LR = 1000 (\ln 5 - \ln (14/3)) + 1800 (\ln 4.5 - \ln (14/3)) \approx 3.5
+    \]
+    We do not reject $H_0$.
+    
+
+
+\end{enumerate}
+
+\end{enumerate}
+
 
 
 \subsection[2022-2023]{\hyperref[sec:kr_04_2022_2023]{2022-2023}}
