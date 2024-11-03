@@ -96,7 +96,7 @@
 \begin{enumerate}
     \item 
     \begin{align*}
-        \plim \frac{\sum (X_i - \bar X)^3}{n+2022} = \plim \frac{\sum X_i^3 - 3\bar X\sum X_i^2 +3\bar X^2 \sum X_i - \bar X^3}{n+2022} = \\
+        \plim \frac{\sum (X_i - \bar X)^3}{n+2022} = \plim \frac{\sum X_i^3 - 3\bar X\sum X_i^2 +3\bar X^2 \sum X_i - \sum \bar X^3}{n+2022} = \\
         = \E(X_1^3) - 3\E(X_1^2) + 3\E(X_1) - 1 = 0;
     \end{align*}
     Note that $\E(X_1^2) = 4/3$, $\E(X_1^3) = 2$.
@@ -120,7 +120,8 @@
     \item $\Cov(N_3, N_{10}) = \Cov(N_3, N_3 + (N_{10} - N_3)) = \Var(N_3) = 3\lambda$.
     \item $\E(X_3 \mid X_1, X_2) = \E(X_3) = 0$, $\E(X_3 \mid X_1 + X_3) = (X_1 + X_3) / 2$, $\Var(X_3 \mid X_1, X_3) = 0$,
     $\Var(X_3 \mid X_1 + X_3) = 1 - (X_1 + X_3)^2/4$.
-    \item Посчитаем ожидание и получим $Y_n = X_1 + X_2 + \ldots + X_n$, the process $(Y_n)$ is a martingale.
+    
+    Посчитаем ожидание и получим $Y_n = X_1 + X_2 + \ldots + X_n$, the process $(Y_n)$ is a martingale.
     \item $\Var(Y_t - Y_s) = \Var(tW_{2t} - sW_{2s}) = 2t^3 + 2s^3 - 4ts^2$.
     We get $\E(M_{t+u} \mid \mathcal F_t ) = W_t^3 + 3W_t u  + \alpha(t + u) W_t$.
     From $\E(M_{t+u} \mid \mathcal F_t ) = W_t^3 + \alpha t W_t$ it follows that $\alpha = -3$.

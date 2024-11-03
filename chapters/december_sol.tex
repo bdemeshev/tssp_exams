@@ -10,7 +10,8 @@
 \item 
 \begin{enumerate}
     \item $dX_t = (W^3_t-3W^2_t\cdot t)dW_t$ (4 points), 1 point for comment how you get the answer (definition and Ito's lemma), 2 points for full form 
-    \[ X_t = X_0 + \int_{0}^{t} W^3_u-3W^2_u\cdot u \,dWu
+    \[ 
+    X_t = X_0 + \int_{0}^{t} W^3_u-3W^2_u\cdot u \,dWu
     \]
     \item A process is a martingale as in short form $A_t dt =0$ (3 points)
 \end{enumerate}
@@ -23,7 +24,7 @@
 \end{enumerate}
 
 \item \begin{enumerate}
-    \item 2 points for $\E(W_5 W_4 | W_4) = W_4^2$, 3 points for $\Var(W_5 W_4 | W_4) = W_4^2$
+    \item 2 points for $\E(W_5 W_4 \mid W_4) = W_4^2$, 3 points for $\Var(W_5 W_4 \mid W_4) = W_4^2$
     \item \begin{enumerate}
         \item 1-2 points for clever ideas
         \item 3 points for solution with serious mistakes
@@ -37,13 +38,13 @@
  
  5 points if one got correct martingale:
  \[
- \E(Y_{t+1} | Y_t) = Y_t \E(e^{b X_{t+1}})
+ \E(Y_{t+1} \mid Y_t) = Y_t \E(e^{b X_{t+1}})
  \]    
 10 points if one solved equation correctly:
 \[
 \E(e^{b X_{t+1}}) = 1 \rightarrow b = 0 or b = \ln(1/9)
 \]
-Minus 1 point if one forgot trivial solution a = 0 and b - any
+Minus 1 point if one forgot trivial solution $a = 0$ and any $b$.
 
 \item \begin{enumerate}
     \item $p^*_u = p^*_d = 1/2$ (3 points)
