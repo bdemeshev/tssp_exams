@@ -90,7 +90,7 @@ left=13mm, right=13mm, includefoot]{geometry}
 
 %\usepackage{embedfile} % отказались от внедрения тех внутрь pdf так как всё равно всё на гитхабе :)
 
-\usepackage{physics} % \abs \norm \grad, меняет \sin, \cos...
+% \usepackage{physics} % \abs \norm \grad, меняет \sin, \cos...
 
 \usepackage{subfigure} % для создания нескольких рисунков внутри одного
 
@@ -122,7 +122,7 @@ left=13mm, right=13mm, includefoot]{geometry}
 % 4. Не сокращайте .1 вместо 0.1
 % 5. Повторяющееся значение повторяйте, а не говорите "то же"
 
-\usepackage[cache=false]{minted} % вставка кода, нужен питон :)
+% \usepackage[cache=false]{minted} % вставка кода, нужен питон :)
 % опция cache=false включена, чтобы избегать необходимости
 % чистить кэш при ошибках компиляции
 % возможно вообще подумать об устранении этого пакета:
@@ -175,6 +175,7 @@ left=13mm, right=13mm, includefoot]{geometry}
 
 
 \newcommand{\cN}{\mathcal{N}}
+\newcommand{\cF}{\mathcal{F}}
 \newcommand{\dU}{\mathrm{U}}
 \newcommand{\dUnif}{\mathrm{U}}
 \newcommand{\dBinom}{\mathrm{Bin}}
@@ -188,15 +189,16 @@ left=13mm, right=13mm, includefoot]{geometry}
 \newcommand{\crit}{\mathrm{crit}}
 
 
-\newcommand \R{\mathbb{R}}
-\newcommand \N{\mathbb{N}}
-\newcommand \Z{\mathbb{Z}}
-
 
 \newcommand \RR{\mathbb{R}}
 \newcommand \NN{\mathbb{N}}
 \newcommand \ZZ{\mathbb{Z}}
 
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\scalp}{\langle}{\rangle}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
 
 

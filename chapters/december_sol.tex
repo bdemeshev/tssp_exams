@@ -3,6 +3,57 @@
 \newpage
 \thispagestyle{empty}
 \section{December exam solutions}
+\subsection[2023-2024]{\hyperref[sec:kr_02_2023_2024]{2023-2024}}
+\label{sec:sol_kr_02_2023_2024} % \label{ссылка сюда} 
+
+\begin{enumerate}
+    \item 
+ \begin{enumerate}
+    \item {[3]} $S_t$ is not a martingale, $\E(S_{t+1} \mid \cF_t) = S_t + 0.6 - 0.4 \neq S_t$.
+    \item {[7]} Two solutions, one is trivial $c=1$, the other\dots 
+ \end{enumerate}
+
+\item {[10 points]}
+
+\begin{enumerate}
+    \item {[4]} $dM_t = -3a(t)\sin(3W_t)dW_t + a'(t)\cos(3W_t)dt - 0.5 \cdot 9 a(t) \cos(3W_t) dt$ 
+    \item {[6]} If $(M_t)$ is a martingale then $a'(t) - 4.5 a(t) = 0$, hence $a(t) = c\cdot \exp(4.5t)$.
+\end{enumerate}
+ 
+\item {[10 points]} 
+\begin{enumerate}
+    \item {[3]} $\E(S_n) = \rho t$.
+    \item {[4]} $\Var(S_n) \to 0$
+    \item {[2]} $S_n \to \rho t$ in mean squared sense. 
+    \item {[1]} $dA_t dB_t = \rho dt$
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+    \item {[2]} $(X_t)$ is not a martingale, as we have $W_t dt$ term;
+    \item {[4]} 
+    \[
+    d(X_t W_t) = W_t dX_t + X_t dW_t + dX_t dW_t  = (W_t^3 dW_t + W_t^2 dt) + X_t dW_t + W_t^2 dt = (W_t^3 + X_t) dW_t + 2W_t^2 dt
+    \]
+    \item {[4]} $\Cov(X_t, W_t) = \E(X_t W_t) - 0$,
+    \[
+    X_t W_t = 0 + \int_0^t (W_u^3 + X_u) dW_u + \int_0^t 2W_u^2 du
+    \]
+    \[
+    \E(X_t W_t) =  \int_0^t \E(2W_u^2) du =  \int_0^t 2u du = t^2.
+    \]
+\end{enumerate}
+
+\item {[10 points]} 
+
+\item {[10 points]}  
+\[
+X_0 = \exp(-rT)\E^*(X_T) = \exp(-rT) \P^*(S_T \geq 2S_0) = \dots
+\]
+
+\end{enumerate}
+
+
 \subsection[2022-2023]{\hyperref[sec:kr_02_2022_2023]{2022-2023}}
 \label{sec:sol_kr_02_2022_2023} % \label{ссылка сюда} 
 
