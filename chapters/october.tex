@@ -10,6 +10,251 @@
 \section{October exam}
 
 
+\subsection[2025-2026]{\hyperref[sec:sol_kr_01_2025_2026]{2025-2026}}
+\label{sec:kr_01_2025_2026} % \label{ссылка сюда}
+
+\textcolor{red}{\textbf{FINAL SALE}}: Every problem will bring you 10 \sout{99.99} points!
+
+Scratch paper price: \sout{10 points per sheet only} \textcolor{red}{\textbf{FREE\footnote[1]{Members only deal!}}}!
+
+\begin{enumerate}
+    \item Dragon Erik has three towns to kidnap a princess from: $A$, $B$ and $C$.
+    He kidnaps the first princess from town $A$ and chooses every next town according to a Markov chain with transition matrix $T$,
+    where states are written in alphabetical order:
+    \[
+    T = \begin{pmatrix}
+        0.1 & 0.2 & ? \\
+        ? &  0 & 0.7 \\
+        0.2 & ? & 0.5 \\
+    \end{pmatrix}.
+    \]
+    \begin{enumerate}
+        \item {[2]} Fill in the missing values. 
+        \item {[2]} Draw the graph of the Markov chain. 
+        \item {[3]} What is the probability that the third princess will be from town $B$?
+        \item {[3]} What is the probability that the second princess was from $A$ given that the third princess was from $B$?
+    \end{enumerate}
+
+
+    \item Every minute the cat Tikhon says «meow» with probability $1/3$ or «purr» with probability $2/3$ independently of all other words.
+    For every «purr» that follows «meow» you get $1$ PEPE, for every «meow» that follows «purr» you pay $3$ PEPEs. 
+    For «purr» that follows «purr» or «meow» that follows «meow» you get nothing. 
+
+    You have just earned $1$ PEPE. 
+    Let $T$ be the time to get the next positive reward. 
+    \begin{enumerate}
+        \item {[5]} Find $\E(T)$.
+        \item {[5]} Find $\Var(T)$.
+    \end{enumerate}
+
+    \item {[10]} Gumbatali starts with zero initial sum $S_0 = 0$. 
+    Every minute he either wins $X_t = 1$ dollar with probability $1/3$ or pays $1$ dollar, $X_t = -1$, with probability $2/3$.
+    He can't go neither below $S_t = -2$ nor above $S_t = 3$, so that
+    \[
+    S_t = \min\{3, \max\{-2, S_{t-1} + X_t\}\}.
+    \]
+    The random variables $(X_t)$ are independent. 
+    
+    Find the stationary distribution of $S_t$.
+
+
+\newpage
+\item Consider the Markov chain:
+
+\begin{tikzpicture}[
+    node distance=50mm,
+    state/.style={circle, draw=black, thick, minimum size=10mm, inner sep=1pt, font=\sffamily\large},
+    every edge/.style={->, >=Stealth, semithick},
+    lab/.style={fill=white, inner sep=1pt, font=\sffamily\small}
+]
+
+% --- nodes (arranged for a clear diagram) ---
+\node[state] (2)  {2};
+% absorbing
+\node[state, above=20mm of 2] (1)  {1};
+
+% closed class A member
+\node[state, right=20mm of 2] (3) {3}; 
+% closed class A member (loop)
+\node[state, above=30mm of 3] (6) {5};  
+ % closed class A member
+\node[state, right=40mm of 2] (9) {4};           
+
+% periodic closed class (small 2-cycle)
+\node[state, right=100mm of 6] (4) {8};
+\node[state, below=30mm of 4] (5) {10};
+
+% transient / connector states on right
+\node[state, right=70mm of 3] (7) {9};
+\node[state, above=20mm of 7] (10) {7};
+\node[state, left=25mm of 10] (11) {6};
+
+% --- edges with probabilities ---
+% state 1: absorbing
+\draw[->] (1) to [loop above] node[lab] {1} ();
+
+% state 2: transient -> 1 and -> 3
+\draw[->] (2) to[bend right=20] node[lab, left] {0.9} (1);
+\draw[->] (2) to[bend left=10] node[lab, above] {0.1} (3);
+
+% closed class A: nodes 3,6,9 (aperiodic because 6 has self-loop)
+\draw[->] (3) to[bend left=20] node[lab, left] {0.4} (6);
+\draw[->] (3) to[bend left=10] node[lab, above] {0.6} (9);
+
+\draw[->] (6) to[bend left=10] node[lab, above] {0.3} (3);
+\draw[->] (6) to[bend right=10] node[lab, below] {} (9);
+\draw[->] (6) to[loop above] node[lab] {0.3} ();
+
+\draw[->] (9) to[bend left=10] node[lab, below] {0.6} (3);
+\draw[->] (9) to[bend left=10] node[lab, right] {0.4} (6);
+
+% periodic closed class (2-cycle): 4 <-> 5 (period 2)
+\draw[->] (4) to[bend left=15] node[lab, above] {1} (5);
+\draw[->] (5) to[bend left=15] node[lab, below] {1} (4);
+
+% transient connectors on right
+% to closed A
+\draw[->] (7) to[bend left=10] node[lab, above] {0.5} (6);  
+% to periodic closed class
+\draw[->] (7) to[bend right=10] node[lab, below] {0.2} (4);  
+% to transient 10
+\draw[->] (7) to node[lab, above] {0.3} (10);               
+
+% state 10: transient (flows to closed class 4 or to 11)
+\draw[->] (10) to[bend left=12] node[lab, above] {0.3} (4);
+\draw[->] (10) to[bend right=12] node[lab, above] {0.7} (11);
+
+% state 11: transient (feeds back toward closed A or to 10)
+\draw[->] (11) to[bend left=12] node[lab, above] {0.8} (6);
+\draw[->] (11) to[bend right=12] node[lab, below] {0.2} (10);
+
+\end{tikzpicture}
+
+\begin{enumerate}
+    \item {[5]} Using a chainsaw
+    %\footnote[1]{We have excellent discounts on chainsaws today!} 
+    cut the Markov chain into communicating classes and classify them as transient, positive recurrent or null-recurrent.
+    \item {[1]} Is the chain irreducible?
+    \item {[4]} Find the period of every state.
+\end{enumerate}
+
+
+    \item Let \( X \) be a Poisson distributed random variable with intensity \( \lambda = 2 \).  
+The probability mass function of a Poisson random variable is:
+\[
+\P(X = k) = e^{-\lambda} \frac{ \lambda^k}{k!}, \quad k = 0, 1, 2, \dots
+\]
+
+\begin{enumerate}
+    \item {[4]} Derive the moment generating function \( M_X(t) = \E(e^{tX})\).
+    \item {[4]} Using moment generating function find the mean and variance of \(X\).
+    \item {[2]} Let \( X_1 \sim \dPois(\lambda = 2) \) and \( X_2 \sim \dPois(\lambda = 3) \) be independent random variables. 
+    Find the moment generating function of \( S = X_1 + X_2 \).
+\end{enumerate}
+
+\item By the mayor's decree, the city installs $T_n$ New Year's trees each day, \( n = 1, 2, \ldots \), starting from October 20th. 
+The random variables $T_1, T_2, \dots$ are independent and take any natural value from $4$ to $10$ with equal probabilities. 
+
+The amounts of snow $(W_n)$ are independent and uniformly distributed on $[0; 1/n]$. 
+
+Determine the probability limits for the following sequences:
+\begin{enumerate}
+    \item {[2]} mayor's New Year kpi,   
+    \(    X_n = \frac{1}{n} \sum_{i=1}^n T_i
+    \)
+    \item {[3]} the New Year's mood given by
+    \(
+    Y_n = \frac{2 X_n +1}{X_n + 3}
+    \)
+    \item {[5]} The average number of snowmen that can be built each day:
+    \(
+    S_n = \frac{1}{n} \sum_{i=1}^n W_i.
+    \)
+\end{enumerate}
+
+\end{enumerate}
+
+
+\subsection[2024-2025]{\hyperref[sec:sol_kr_01_2024_2025]{2024-2025}}
+\label{sec:kr_01_2024_2025} % \label{ссылка сюда}
+
+
+\begin{enumerate}
+    \item {[10]} Michael stands in a corner of a hexagonal room with white soft walls. 
+    Stochastic Processes course has caused him a deep trauma.
+    Michael has insomnia and two independent personal identities.     
+    At each iteration each personal identity moves from one vertex of the hexagon to the adjacent one.
+    Two personal identities move independently with equal probabilities in both directions. 
+    
+    Consider the Markov chain where the state is a relative position of two identities of Michael in a hexagon. 
+    \begin{enumerate}
+        \item {[4]} Draw the diagram of chain states and find the transition matrix. 
+        \item {[2]} Classify the states as transient or recurrent. 
+        \item {[4]} Which proportion of his eternal life Michael spends in a perfect harmony with himself (two personal identities are located at the same vertex)?
+    \end{enumerate}
+
+
+    \item {[10]} Compare sigma-algebras and conditional expected values!
+    
+    \begin{enumerate}
+        \item {[5]} Consider sigma-algebras 
+        \[
+        \cF_1 = \sigma(X), \quad \cF_2 = \sigma(Y), \quad \cF_3 = \sigma(X, Y), \quad \cF_4 = \sigma(X + Y, X - Y). %, \quad \cF_5 = \sigma(X, Y, X + Y).
+        \]
+        Which of them are always equal? Which sigma-algebra is always a subset of another one?
+
+        \item {[5]} Consider random variables 
+        \[
+        R_1 = \E(X \mid Y), \quad R_2 = \E(1 / X \mid Y), \quad R_3 = \E(1 / X \mid 1/Y), \quad R_4 = \E(X \mid 1/Y). %, R_5 = 1 / \E(X \mid Y).
+        \]
+        Which of them are always equal provided that they exist?
+    \end{enumerate}
+    
+    
+
+    \item {[10]} The random variables $(X_n)$ are independent and uniform on $[0;1]$ and $S_n = X_1 + X_2 + \dots + X_n$.
+    \begin{enumerate}
+        \item {[4]} Find the moment generating function of $X_1$.
+        \item {[2]} Find the moment generating function of $R = S_{10} - 5$.
+        \item {[4]} Find $\E(X_1 \mid S_3)$.
+        %\item {[4]} Find the moment generating function of $R_n = (S_n - n/2) / \sqrt{n/12}$.
+    \end{enumerate}
+
+    \newpage
+
+    \item {[10]} I throw a fair coin. 
+    Let $Y$ be the number of throws until I obtain the sequence head-tail-head. 
+
+    \begin{enumerate}
+        \item {[4]} Find $\E(Y)$.
+        \item {[6]} Find $\E(Y^2)$ and hence $\Var(Y)$.
+    \end{enumerate}
+
+
+    \item {[10]} Consider two non-random sequences, $h_n = 1/n$ and $t_n = 1 + 1/n$.
+    Elon Musk throws a fair coin once and selects the sequence $(h_n)$ if it lands on head and selects the sequence $(t_n)$ otherwise.
+    Hence Elon obtains a random sequence $(X_n)$.
+
+    \begin{enumerate}
+        \item {[2]} What is the distribution of $X_5$?
+        \item {[4]} What is the distribution of $\lim X_n$?
+        \item {[4]} Write $\plim X_n$ explicitely as a function of $X_1$.
+    \end{enumerate}
+    
+    \item {[10]} The random variables $(X_n)$ are independent and they have Poisson distribution with rate $\lambda = 2$. 
+    Consider the cumulative sum $S_n = X_1 + X_2 + \dots + X_n$ with $S_0 = 0$
+    and the natural filtration $\cF_n = \sigma(X_1, X_2, \dots, X_n)$.
+
+    \begin{enumerate}
+        \item {[4]} Provide two examples of events that belong to $\cF_9$ but do not belong to $\cF_7$.
+        \item {[6]} Find all constants $a$ and $b$ such that $M_n = S_n + a + b \cdot n$ is a martingale. 
+    \end{enumerate}
+
+    Hint: if $R \sim \dPois(\lambda)$ then $\E(R) = \lambda$ and $\Var(R) = \lambda$. 
+
+\end{enumerate}
+
+
 
 \subsection[2023-2024]{\hyperref[sec:sol_kr_01_2023_2024]{2023-2024}}
 \label{sec:kr_01_2023_2024} % \label{ссылка сюда}

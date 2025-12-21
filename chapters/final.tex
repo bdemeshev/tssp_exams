@@ -9,6 +9,87 @@
 \thispagestyle{empty}
 \section{Final exam}
 
+
+\subsection[2024-2025]{\hyperref[sec:sol_kr_04_2024_2025]{2024-2025}}
+\label{sec:kr_04_2024_2025} % \label{ссылка сюда}
+
+
+\begin{enumerate}
+    \item Unobserved random variables $(y_i)$ are independent and uniform on $[-2a, a]$ with unknown $a > 0$.
+
+    \begin{enumerate}
+        \item {[4]} Find $\E(y_i^2)$ and $\E(\abs{y_i})$.
+        \item {[3]} Find the method of moments estimator of $a$ if you know the value of $\sum y_i^2$.
+        \item {[3]} Find the method of moments estimator of $a$ if you know the value of $\sum \abs{y_i}$.
+    \end{enumerate}
+
+    \item Dragon Erik receives gifts from two kingdoms: $x_1$, $x_2$, \dots, $x_{10}$ from Ex-Kingdom and $y_1$, $y_2$, \dots, $y_{20}$ from Why-Kingdom. 
+    Variables $(x_i)$ are exponentially distributed with rate $\lambda_x$ and variables $(y_i)$ — with rate $\lambda_y$.
+    All variables are independent. 
+    Erik has two hypothesis, $H_0$: $\lambda_x = \lambda_y$ and $H_1$: $\lambda_x \neq \lambda_y$.
+    In the observed sample $\sum x_i = 300$, $\sum y_i = 500$.
+    
+    \begin{enumerate}
+        \item {[4]} Find the unrestricted maximum likelihood estimates of $\lambda_x$ and $\lambda_y$.
+        \item {[3]} Find the maximum likelihood estimate of the rate under $H_0$.
+        \item {[3]} Test $H_0$ against $H_1$ at $0.05$ significance level using likelihood ratio test.
+    \end{enumerate}
+
+    Note: $\P(\chi^2_1 \geq 3.84) =0.05$, $\P(\chi^2_2 \geq 5.99 ) =0.05$, $\P(\chi^2_3 \geq 7.81) = 0.05$.
+
+    \item The variables $(X_i)$ are independent and have exponential distribution with unknown rate $\lambda$.
+    
+    Yuki-the-Hedgehog would like to estimate the unknown parameter $a = 1/\lambda^2$.
+    He uses the estimator
+    \[
+        \hat a = \frac{X_1^2 + X_2^2 + \dots + X_n^2}{2n + 1}
+    \]
+
+    \begin{enumerate}
+        \item {[5]} Is the estimator unbiased?
+        \item {[5]} Is the estimator consistent?
+    \end{enumerate}
+
+    \newpage 
+
+    \item Princess Lika Pankova would like to test the hypothesis $H_0$ that $y_1$ and $y_2$ are independent and uniform on $[0, 1]$ 
+    against the alternative that they have the joint density $f(y_1, y_2) = 2 - y_1 - y_2$ for $y_1, y_2 \in [0, 1]$.
+    
+    Lika accepts only the best! 
+    \begin{enumerate}
+        \item {[7]} Construct the test with $0.1$ probability of the first type error and lowest probability of the second type error.
+        \item {[3]} What is the minimal achieved second type error probability?
+    \end{enumerate}
+    
+    \item Arina loves all kinds of raisin-studded Easter bread, but her grandmother's is her absolute favorite.
+    Grandmother's Easter bread sizes $(y_i)$ are independent identically distributed with density 
+    $f(y) = ab^a/y^{a+1}$ for $y \geq b$ and zero otherwise. 
+
+    \begin{enumerate}
+        \item {[2]} Draw a typical density for some values of parameters $a$ and $b$. 
+        \item {[4]} Find a sufficient statistic for the unknown $a$ given that $b = 1$ kilo. 
+        \item {[4]} Find a sufficient statistic for the unknown $a$ and $b$. 
+    \end{enumerate}
+    
+    \item   The semi-annual $(y_t)$ is modelled by $ETS(ANA)$ process:
+    \[
+    \begin{cases}
+        u_t \sim \cN(0; 9) \\
+        s_t = s_{t-2} + 0.1 u_t \\
+        \ell_t = \ell_{t-1} + 0.3 u_t \\
+        y_t = \ell_{t-1} + s_{t-2} + u_t \\
+    \end{cases}    
+    \]
+    Let $s_{100} = 2$, $s_{99} = -3$, $\ell_{100} = 200$.
+    \begin{enumerate}
+      \item {[6]} Find 95\% predictive interval for $y_{102}$.
+      \item {[4]} Write this model in the form $A(L) y_t = B(L) u_t$, where $A(L)$ and $B(L)$ are lag polynomials.
+    \end{enumerate}
+  
+\end{enumerate}
+
+
+
 \subsection[2023-2024]{\hyperref[sec:sol_kr_04_2023_2024]{2023-2024}}
 \label{sec:kr_04_2023_2024} % \label{ссылка сюда}
 
