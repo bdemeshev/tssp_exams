@@ -9,6 +9,86 @@
 \thispagestyle{empty}
 \section{December exam}
 
+\subsection[2025-2026b]{\hyperref[sec:sol_kr_02_2025_2026b]{2025-2026b}}
+\label{sec:kr_02_2025_2026b} % \label{ссылка сюда}
+
+
+Official chief mistress of King Louis XV Madame de Pompadour was born exactly 204 years earlier, 
+on 29 December 1721. Her original name was Jeanne Antoinette Poisson.
+
+
+\begin{enumerate}
+
+\item Jeanne Antoinette Poisson receives letters from Diderot and d'Alembert. 
+Each of them independently may be in a good mood or bad mood equiprobably.
+Every person sends letters to Jeanne Antoinette Poisson according to an independent Poisson process with intensity $\lambda_{\text{good}} = 2$
+or $\lambda_{\text{bad}} = 1$ [letters per week] depending on his mood.
+
+Let $(M_t)$ be the number of letters received by Madame de Pompadour in $t$ weeks. 
+
+\begin{enumerate}
+    \item {[2 + 3]} Find $\E(M_t)$ and $\Var(M_t)$.
+    \item {[2]} Is $(M_t)$ a Poisson process? If so, find its intensity. 
+    \item {[3]} Let $T_1$ be the time of the first letter. Find its cumulative distribution function $F(t)$.
+\end{enumerate}
+
+\item We select a point $(X, Y)$ randomly uniformly inside the square with vertices \((0,0)\), \((4,0)\), \((4,4)\), and \((0,4)\). 
+\begin{enumerate}
+    \item {[2 + 3]} Find $\E(Y \mid Y - X)$ and $\Var(Y \mid Y - X)$.
+    \item {[2]} Consider the $\sigma$-algebra $\cF = \sigma(Y - X)$. 
+    Provide an example of two non-trivial events from $\cF$ and two events not from $\cF$.
+    \item {[3]} Find $\Cov(X, Y \mid Y - X)$.
+\end{enumerate}
+Hint: by definition $\Cov(X, Y \mid \cF) = \E(XY \mid \cF) - \E(X\mid \cF)\E(Y\mid \cF)$.
+
+\item Let $S_0 = 0$. 
+Each hour independently of previous history the process $S_n$ increases by $1$ with probability $0.25$, decrease by $1$ with probability $0.25$ or does not change.
+Consider the first moment of time $T$ when $\abs{S_{T}} = 4$.
+
+\begin{enumerate}
+    \item {[3]} If possible find $\alpha$ such that $Q_t = S_t^2 + \alpha t$ is a martingale.
+    \item {[3]} If possible find $\beta$ such that $Q_t = \exp(S_t + \beta t)$ is a martingale.
+    \item {[4]} Find $\E(T)$.
+\end{enumerate}
+% Hint: you may use Doob's theorem without checking technical details. 
+
+\item Consider the standard Wiener process $(W_t)_{t\geq 0}$.
+\begin{enumerate}
+\item {[4]} Find $\Corr(W_4 - W_2, W_3 - W_1)$.
+\item {[6]} Find $\E(W_3 - W_1 \mid W_4 - W_2)$ and $\Var(W_3 - W_1 \mid W_4 - W_2)$.
+\end{enumerate}
+
+%\item Consider the process $Q_t = \cos W_t$.
+%\begin{enumerate}
+%\item {[6]} Find $dQ_t$ and represent $Q_t$ as a sum of a constant, an Ito integral and a Riemann integral.
+%\item {[2]} Is $(Q_t)$ a martingale?
+%\item {[2]} Find an ordinary differential equation for $h(t) = \E(Q_t)$. You don't neet to solve this equation. 
+%\end{enumerate}
+
+\item Consider three processes, $A_t = \int_0^t u \, dW_u, \quad B_t = \int_0^t u W_u^4 \, dW_u, \quad C_t = \int_0^t u W_u^2 \, du$.
+\begin{enumerate}
+    \item {[2 + 2]} Find $\E(A_t)$, $\E(C_t)$.
+    \item {[2 + 4]} Find $\Var(B_t)$, $\Cov(A_t, C_t)$.
+\end{enumerate}
+
+%\item Consider the process $X_t = A_t B_t$ where $A_t = \int_0^t u \, dW_u$ and $B_t = \int_0^t W_u^2 \, dW_u$.
+%\begin{enumerate}
+%\item {[6]} Find $dX_t$ and hence represent $X_t$ as a sum of a constant, an Ito integreal and a Riemann integral.
+%\item {[2]} Is $(X_t)$ a martingale?
+%\item {[2]} Find $\E(X_t)$.
+%\end{enumerate}
+
+\item Be brave!
+  Consider the stochastic process $X_t = g(t) (\exp (2026 W_t) + \exp(-2026W_t))$ where $g(t)$ is some non-random function.
+  \begin{enumerate}
+      \item {[6]} Find $dX_t$ and hence represent $X_t$ as a sum of a constant, an Ito integreal and a Riemann integral. 
+      \item {[4]} If possible find any $g(t) \neq 0$ such that $X_t$ is a martingale.
+  \end{enumerate}
+
+
+\end{enumerate}
+
+
 
 \subsection[2025-2026a]{\hyperref[sec:sol_kr_02_2025_2026a]{2025-2026a}}
 \label{sec:kr_02_2025_2026a} % \label{ссылка сюда}
