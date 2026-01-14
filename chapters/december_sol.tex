@@ -11,10 +11,39 @@
 \begin{enumerate}
 \item 
 \item
+\begin{enumerate}
+    \item $\E(Y \mid Y - X) = (4 + Y - X)/2$ and $\Var(Y \mid Y - X) = (4 - \abs{Y - X})^2 / 12$.
+    \item From $\cF$: $A_1 = \{ X > Y \}$, $A_2 = \{X > Y + 0.5\}$.
+    Not from $\cF$: $B_1 = \{X > 2\}$, $B_2 = \{Y < 3\}$.
+    \item Let's just add a known value $Y - X$ to the first term, $\Cov(X, Y \mid Y - X) = \Cov(X + (Y - X), Y \mid Y - X) = \Var(Y \mid Y - X)$.
+\end{enumerate}
 \item 
+\begin{enumerate}
+    \item $\alpha = -0.5$;
+    \item $\beta = \ln 4 - \ln(e + e^{-1} + 2)$.
+    \item $\E(T) = 2 \cdot 4^2 = 32$.
+\end{enumerate}
 \item
+    \begin{enumerate}
+      \item $\Corr(W_4 - W_2, W_3 - W_1) = 1 / \sqrt{2 \cdot 2} = 0.5$.
+      \item Let's find best linear prediction of $W_3 - W_1$ given $W_4 - W_2$, $\beta = \Cov(W_4 - W_2, W_3 - W_1)/Var(W_4 - W_2) = 0.5$, hence $W_3 - W_1 = 0.5 (W_4 - W_2) + R$.
+    
+      It follows that 
+      \[
+      \E(W_3 - W_1 \mid W_4 - W_2) = 0.5 (W_4 - W_2)
+      \]
+      and that 
+      \[
+      \Var(W_3 - W_1 \mid W_4 - W_2) = \Var(R) = 2 - 0.25 \cdot 2 = 1.5. 
+      \]
+    \end{enumerate}
 \item 
+\begin{enumerate}
+    \item $\E(A_t) = 0$, $\E(C_t) = t^3 / 3$.
+    \item $\Var(B_t) = 15t^7$, $\Cov(A_t, C_t) = ...$.
+\end{enumerate}
 \item
+From ordinary differential equation $g'(t) = -2026^2 g(t)$ we get for example, $g(t) = \exp(-2026^2/2 t)$.
 \end{enumerate}
 
 \subsection[2025-2026a]{\hyperref[sec:kr_02_2025_2026a]{2025-2026a}}
@@ -25,8 +54,25 @@
 \item
 \item 
 \item
+\begin{enumerate}
+    \item $\E(A_t) = 0$, $\E(C_t) = t^2 /2$.
+    \item $\Var(A_t) = t^3$, $\Cov(A_t, B_t) = 15t^4/4$, $\Var(C_t) = 7t^4/12 - (t^2/2)^2$.
+    \[
+    \E(C_t^2) = \int_0^t \int_0^t \E(W_u^2 W_s^2) \, du \, ds = 2 \int_{s=0}^t \int_{u=0}^s 2u^2 + us \, du \, ds = 2 \cdot 7/24 t^4.
+    \]
+\end{enumerate}
 \item 
+    \begin{enumerate}
+      \item $\E(W_3^4) = 3^2 \cdot 3  = 27$, $W_3 = W_2 + I$ where $I \sim \cN(0, 1)$, hence $W_3^4 = (W_2 + I)^4$ and $\E(W_3^4 \mid W_2 = 10) = 10^4 + 6 \cdot 10^2 + 3$.
+      \item Using Isserlis theorem, $\Cov(W_1 W_2, W_5 W_6) = \E(W_1 W_2 W_5 W_6) - \E(W_1 W_2) \E(W_5 W_6) = (5 + 2 + 2) - 5 = 4$.
+    \end{enumerate}
 \item
+Let $Q_t = \int_0^t u^3 \, dW_u + \int_0^t 2u \, du$, so $R_t = \exp(Q_t)$.
+By Ito's lemma:
+\[
+dR_t = \exp(Q_t) dQ_t + 0.5 \exp(Q_t) (dQ_t)^2 = \exp(Q_t)(t^3 \, dW_t + 2t \, dt) + 0.5 \exp(Q_t)t^6 \, dt.
+\]
+The differtial equation is $h'(t) = h(t) (2t + t^6/2)$.
 \end{enumerate}
 
 \subsection[2024-2025]{\hyperref[sec:kr_02_2024_2025]{2024-2025}}
