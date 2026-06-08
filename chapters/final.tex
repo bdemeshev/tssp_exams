@@ -9,6 +9,115 @@
 \thispagestyle{empty}
 \section{Final exam}
 
+\subsection[2025-2026b]{\hyperref[sec:sol_kr_04_2025_2026b]{2025-2026b}}
+\label{sec:kr_04_2025_2026b} % \label{ссылка сюда}
+
+
+
+\subsection[2025-2026a]{\hyperref[sec:sol_kr_04_2025_2026a]{2025-2026a}}
+\label{sec:kr_04_2025_2026a} % \label{ссылка сюда}
+
+Date: 2026-04-24. 
+Twenty years ago youtube published the first video «\href{https://www.youtube.com/watch?v=jNQXAC9IVRw}{me at the zoo}».
+
+\begin{enumerate}
+
+\item Suppose that salaries \( x_1, x_2, \dots, x_n \) (measured in units of the minimum wage) are independent and follow a simple Pareto distribution with probability density function
+\[
+f(x \mid \alpha) = \frac{\alpha}{x^{\alpha+1}}, \qquad x \ge 1,
+\]
+where \( \alpha > 1 \) is an unknown shape parameter.
+
+\begin{enumerate}
+    \item {[4]} Find the method of moments estimator $\hat{\alpha}_{\text{MM}}$.
+
+    \item {[5]}  Let $ p \in (0,1] $ be the proportion of the population with the highest salaries. 
+    Show that the share of total income received by this top \( p \) fraction of the population is 
+    \[
+    D(p) = p^{\frac{\alpha-1}{\alpha}}.
+    \]
+
+    \item {[1]} The empirical Pareto principle (the «80/20 rule») states that approximately 20\% of the population receives 80\% of the total income. 
+    Using the formula find $\hat{\alpha}_{\text{rule}}$ that satisfies
+    \[
+    D(0.2) = 0.8.
+    \]
+    
+\end{enumerate}
+
+
+\item  Let \( x_1, x_2, \dots, x_n \) be a random sample from a binomial distribution \( \dBin(N, p) \) with probability mass function
+    \[
+    P(x_i = x) = C_N^x p^x (1-p)^{N-x}, \quad x = 0, 1, 2, \ldots, N.
+    \]    
+    \begin{enumerate}
+        \item {[4]} Find the method of moments estimators for $N$ and $p$.
+    \end{enumerate}
+    Consider known $N = 4$ and the observed sample \( (4, 1, 2, 2, 1) \).
+    \begin{enumerate}[resume]
+        \item {[3]} Find the MLE estimate of $p$.
+        \item {[2]} Prove that MLE estimator of $p$ is unbiased and consistent.
+        \item {[1]} Find a minimal sufficient statistics for $p$.
+    \end{enumerate}
+
+\item  The depth of corrosion $\mu$ [mm] on a metal plate is measured using four different unbiased independent methods (ultrasonic, electrical resistance, optical, and X-ray). 
+    Due to the different principles and equipment, the measurement variances are known to be
+    \[
+    \sigma_1^2 = 1.6,\quad \sigma_2^2 = 2,\quad \sigma_3^2 = 2.5,\quad \sigma_4^2 = 3.
+    \]
+    The measured values [mm] of obtained by the four methods are
+    \[
+    x_1 = 19,\quad x_2 = 18,\quad x_3 = 20,\quad x_4 = 21.
+    \]    
+    \begin{enumerate}
+        \item {[3]} Give at least one example of an unbiased estimator \( \tilde{\mu} \) of \(\mu\).
+
+        \item {[4]} Find the linear unbiased estimator \( \hat{\mu} \) of \( \mu \) that has the smallest possible variance.
+
+        \item {[1]} Compute the numerical value of \( \hat{\mu} \) using the given data.
+
+        \item {[2]} Compute the standard error of \( \hat{\mu} \).
+
+    \end{enumerate}
+
+\item Random variables $X_1$, \dots, $X_n$ are independend with Poisson distribution $\P(X_i = k) = \exp(-\lambda)\lambda^k/ k!$ for non-negative integers $k$.
+Random variables $Y_1$, \dots, $Y_n$ are independend with $\P(Y_i = 1) = p$ and $\P(Y_i = 0) = 1-p$.
+
+I do not observe $X_i$ nor $Y_i$, I observe only their product $W_i = X_i Y_i$. 
+Among $n=1000$ observations of $W_i$: $300$ observations are exactly equal to $0$ and $\sum W_i = 7000$.
+
+Test the null hypothesis $p=1$ against alternative $p<1$ using likelihood ratio test with significance level $0.05$. 
+
+FYI: right $0.05$ critical chi-squared values are $\chi^2_{1,\text{crit}} = 3.84$, $\chi^2_{1,\text{crit}} = 5.99$, $\chi^2_{1,\text{crit}} = 7.81$.
+
+\item Random variables $X_1$, $X_2$, \dots, $X_n$ are independent and identically distributed with 
+\[
+\P(X_i = 0) = \exp(-a), \quad \P(X_i = k) = \P(X_i = -k) = \exp(-a)a^k / (2\cdot k!) \text{ for } k\in \NN.
+\]
+Let $Y_i = \abs{X_i}$.
+\begin{enumerate}
+    \item {[6]} Calculate Fisher information for the sample $X_1$, \dots, $X_n$ and for the sample $Y_1$, \dots, $Y_n$.
+    Which sample contains more information about unknown $a$?
+
+    \item {[4]} Does maximum likelihood estimator based on $X_1$, \dots, $X_n$ attain the Cramer-Rao boundary?
+\end{enumerate}
+
+
+\item Random variables $X_1$, $X_2$, \dots, $X_n$ are independent and identically distributed with 
+\[
+\P(X_i = 0) = \exp(-a), \quad \P(X_i = k) = \P(X_i = -k) = \exp(-a)a^k / (2\cdot k!) \text{ for } k\in \NN.
+\]
+\begin{enumerate}
+    \item {[4]} Find minimal sufficient statistic $T$ for the unknown parameter $a$.
+\end{enumerate}
+Let $g(X_1, X_2, \dots, X_n)$ be some function that does not depend on $a$ directly. 
+\begin{enumerate}[resume]
+    \item {[3]} Is it possible that $\E(T \mid g(X_1, X_2, \dots, X_n))$ depends on $a$?
+    \item {[3]} Is it possible that $\E(g(X_1, X_2, \dots, X_n) \mid T)$ depends on $a$?
+\end{enumerate}
+
+\end{enumerate}
+
 
 
 \subsection[2024-2025]{\hyperref[sec:sol_kr_04_2024_2025]{2024-2025}}

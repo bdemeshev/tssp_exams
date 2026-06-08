@@ -5,6 +5,79 @@
 \section{Final exam solutions}
 
 
+\subsection[2025-2026b]{\hyperref[sec:kr_04_2025_2026b]{2025-2026b}}
+\label{sec:sol_kr_04_2025_2026b} % \label{ссылка сюда}
+
+
+\subsection[2025-2026a]{\hyperref[sec:kr_04_2025_2026a]{2025-2026a}}
+\label{sec:sol_kr_04_2025_2026a} % \label{ссылка сюда}
+
+\begin{enumerate}
+    \item 
+    Threshold income $t$ for rich people can be found from equation $\P(X > t) = p$.
+    Average income is given by $\E(X)$.
+    Average income of a rich guy is given by $\E(X \mid X > t) = \E(X I(X>t)) / p$.
+    Hence, proportion of income is given by 
+    \[
+    D(p) = \frac{\E(X \mid X > t) \cdot p}{\E(X)} = \frac{\E(X I(X>t))}{\E(X)}.
+    \]
+    \item 
+    \item 
+    \item Let $N_0$ be the number of zeros in the sample.
+    Likelihood is given by
+    \[
+    L = (1 - p + p \exp(-\lambda))^{N_0} \prod_{W_i > 0} p \exp(-\lambda) \frac{\lambda^{W_i}}{W_i!}.
+    \]
+    Recall that $\lambda^0 = 1$ and $0! = 1$ by gentleman's agreement. 
+    Hence, $\sum W_i = \sum_{W_i >0} W_i$ and $\sum \ln W_i = \sum_{W_i > 0} \ln W_i$.
+    \[
+    \ell(p, \lambda) = N_0 (1 - p + p\exp(-\lambda)) + (n- N_0)\ln p - (n - N_0) \lambda + \ln \lambda \sum W_i - \sum \ln W_i!.
+    \]
+    Restricted estimates are $\hat p_R = 1$, $\hat \lambda_R = \sum W_i /n = 7$.
+    Unrestricted estimators can't be obtained in a closed form, but can be calculated approximately with sufficient precision.
+    While solving the first order conditions we will get the equation 
+    \[
+    \exp(-\hat\lambda_{ur}) = 1 - \hat\lambda_{ur}/10.
+    \]
+    Exponential function decays very quickly, so $\hat\lambda_{ur} \approx 10$. For $\hat\lambda = 10$ the left hand side will be $\exp(-10)$ and the right hand side will be exactly $0$. 
+    It follows that $\hat p_{ur} \approx 0.7$.
+
+    We use $\chi^2$ with $2-1=1$ degree of freedom. The null hypothesis is rejected.
+    
+    \item Let's compare likelihood for $X_i$ and $Y_i = \abs{X_i}$.
+    As $Y_i \sim \dPois(\lambda)$,
+    \[
+    L_Y(a) = \prod \exp(-a) a^{Y_i} / Y_i!
+    \]
+    Be carefull with $X_i$. Let $N_0$ be the number of zeros in the sample.
+    Also note that if $X_i < 0$ then you should take $(-X_i)!$.
+    \[
+    L_X(a) = \exp(-a)^{N_0} \prod_{X_i \neq 0} \exp(-a) a^{\abs{X_i}}/(2\abs{X_i}!).
+    \]
+    Rearrange a little bit!
+    \[
+    L_X(a) = 2^{N_0 - n} \prod \exp(-a) a^{\abs{X_i}}/ \abs{X_i}!
+    \]
+    So, $\ln L_X(a)$ and $\ln L_Y(a)$ differs by $(N_0 - n)\ln 2$. 
+    All derivatives with respect to $a$ are equal. 
+    Samples of $X_i$ and $Y_i$ have the same Fisher information, same sufficient statistics, same maximum likelihood estimators. 
+    \[
+    \hat a_{ml} = \sum Y_i / n = \sum \abs{X_i}/n.
+    \]
+    As $\Corr(\hat a_{ml}, \ell') = 1$ the Cramer-Rao boundary is attained. 
+
+
+    \item Sufficient statistic is $\sum \abs{X_i} = \sum Y_i$.
+    If you take $g(X_1, \dots, X_n)$ identically equal to $67$ then $\E(T \mid g) = \E(T) = n\cdot a$ and we see that $\E(T \mid g)$ can depend on $a$.
+    It is also possible that $\E(T \mid g)$ does not depend on $a$, take for example $g = T$.
+    \[
+    \E(g \mid T) = \int_{\RR^n} g(x_1, \dots, x_n) f(x_1, \dots, x_n \mid t) dx_1 dx_2 \dots dx_n.
+    \]
+    Inside the integral nothing depends on $a$ so $\E(g \mid T)$ can't depend on $a$. 
+
+
+\end{enumerate}
+
 
 \subsection[2024-2025]{\hyperref[sec:kr_04_2024_2025]{2024-2025}}
 \label{sec:sol_kr_04_2024_2025} % \label{ссылка сюда}

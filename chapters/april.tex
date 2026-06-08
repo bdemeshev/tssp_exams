@@ -10,6 +10,97 @@
 \section{April exam}
 
 
+\subsection[2025-2026b]{\hyperref[sec:sol_kr_03_2025_2026b]{2025-2026b}}
+\label{sec:kr_03_2025_2026b} % \label{ссылка сюда}
+
+\begin{enumerate}
+\item   The $ETS(AAdN)$ model is given by the system
+  \[
+  \begin{cases}
+  u_t  \sim \cN(0; 100) \\
+  b_t = 0.4 b_{t-1} + 0.1 u_t \\
+  \ell_t = \ell_{t-1} + 0.4 b_{t-1} + 0.1 u_t \\
+  y_t = \ell_{t-1} + 0.4 b_{t-1} + u_t \\
+  \end{cases}
+  \]
+  with $\ell_{100} = 30$ and $b_{100} = 2$.
+\begin{enumerate}
+  \item {[5]} Find the 95\% predictive interval for $y_{102}$.
+  \item {[5]} Find conditional probability $\P(y_{102} > 40 \mid \ell_{100}, b_{100})$ in terms of the standard normal distribution function.
+\end{enumerate}
+
+\item   The semi-annual $y_t$ is modelled by $ETS(ANA)$ process:    
+    \[
+    \begin{cases}
+        u_t \sim \cN(0; 16) \\
+        s_t = s_{t-2} + 0.1 u_t \\
+        \ell_t = \ell_{t-1}  + 0.5 u_t \\
+        y_t = \ell_{t-1} + s_{t-2} + u_t \\
+    \end{cases}    
+    \]
+with $\ell_0 = 20$, $s_0 = 5$ and $s_{-1} = -5$.
+
+\begin{enumerate}
+    \item {[4]} Find best point forecasts for $y_{100}$ and $y_{101}$.
+    \item {[6]} Assume the first observation $y_1$ is missing in the dataset, but the second one is known, $y_2 = 30$. 
+    Find the best point forecast for $y_1$.
+\end{enumerate}
+
+\item Consider $MA(1)$ process $y_t = 10 + u_t + 5 u_{t-1}$, where $u_t$ is a white noise process with variance $20$.
+\begin{enumerate}
+    \item {[5]} Find $\E(y_t)$, $\Var(y_t)$, $\Cov(y_t, y_s)$.
+    \item {[1]} Is the process $(y_t)$ stationary?
+    \item {[1]} Is the process $(y_t)$  invertible with respect to $(u_t)$?
+    \item {[3]} If possible represent $y_t$ in the form $y_t = \alpha + v_t + \beta v_{t-1}$ where $\alpha$ and $\beta$ are some constant with $\beta \neq 5$ and $(v_t)$ is a white noise. 
+\end{enumerate}
+
+\item Consider the equation
+\(
+y_t = 1 + 1.2 y_{t-1} - 0.5 y_{t-2} + u_t - 0.8 u_{t-1},
+\)
+where \( u_t \) is a white noise process with variance $\sigma^2$.
+\begin{enumerate}
+    \item {[1]} How many non-stationary solutions does this equation have?
+    \item {[2]} How many stationary solutions of $MA(\infty)$ form with respect to $(u_t)$ does this equation have? 
+    \item {[2]} Plot all roots of the AR lag polynomial on the complex plane and indicate the unit circle.
+    \item {[3]} Rewrite all stationary solutions in $AR(\infty)$ form with respect to $(u_t)$, if possible.  
+    \item {[2]} Find $\E(y_t)$ for all stationary solutions.
+\end{enumerate}
+\item   Consider the stationary solution of the equation
+\[
+y_t = 0.3 y_{t-1} + 0.4 y_{t-2} + u_t, 
+\]
+where $(u_t)$ is a white noise process. 
+\begin{enumerate}
+    \item {[3]} How many stationary solutions does this equation have?
+    \item {[1]} Check the invertibility condition for this equation.
+    \item {[3]} Find the values of ACF $\rho(1)$, $\rho(2)$, $\rho(3)$ for the stationary solution.
+    \item {[3]} Find the values of PACF $\phi(1)$, $\phi(2)$, $\phi(3)$  for the stationary solution.
+\end{enumerate}
+
+\item For each of the following equations:
+\begin{itemize}
+    \item Check whether a stationary solution exists.
+    \item Check whether the process is invertible.
+    \item Identify the process as $ARIMA(p,d,q)$ with the smallest possible $d$ ($d=0$ for stationary process).
+    \item If the process is non-stationary, suggest a transformation to make it make it stationary.
+    \item If the $AR$ and $MA$ polynomials have common roots, state them.
+\end{itemize}
+
+\begin{enumerate}
+    \item {[2]} \(y_t = 0.5 y_{t-1} + 0.5 y_{t-2} + u_t - 0.5 u_{t-1}\)
+    \item {[2]} \(y_t = 1.5 y_{t-1} - 0.5 y_{t-2} + u_t - 0.2 u_{t-1}\)
+    \item {[3]} \(y_t = y_{t-1} - 0.25 y_{t-2} + u_t - u_{t-1} + 0.25 u_{t-2}\)
+    \item {[3]} \((1 - L)^2 y_t = (1 - 0.8L) u_t\)
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+
+
+
 \subsection[2024-2025]{\hyperref[sec:sol_kr_03_2024_2025]{2024-2025}}
 \label{sec:kr_03_2024_2025} % \label{ссылка сюда}
 
