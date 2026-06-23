@@ -12,6 +12,112 @@
 \subsection[2025-2026b]{\hyperref[sec:sol_kr_04_2025_2026b]{2025-2026b}}
 \label{sec:kr_04_2025_2026b} % \label{ссылка сюда}
 
+\begin{enumerate}
+
+\item Let \( x_1, x_2, \dots, x_n \) be a random sample from a Gamma distribution with density
+\[
+f(x \mid \alpha, \beta) = \frac{1}{\Gamma(\alpha)\beta^\alpha} x^{\alpha-1} e^{-x/\beta}, \quad x > 0,
+\]
+where \(\alpha > 0\) is the shape parameter and \(\beta > 0\) is the scale parameter.
+
+It is known that
+\(\E(x_i) = \alpha\beta\) and \(\E (x_i^2) = \alpha(\alpha+1)\beta^2\).
+ % \Var(x_i) = \alpha\beta^2,
+\begin{enumerate}
+    \item {[4]} Find the method of moments estimators for \(\alpha\) and \(\beta\).
+    \item {[2]} For the observed sample 
+    \(
+    (2,\; 1,\; 3,\; 2,\; 4),
+    \)
+    compute the numerical values of \(\hat{\alpha}_{MM}\) and \(\hat{\beta}_{MM}\).
+    \item {[3]} Are the estimators \(\hat{\alpha}_{MM}\) and \(\hat{\beta}_{MM}\) consistent?
+    \item {[1]} Assume now that the shape parameter \(\alpha\) is known. 
+    Find the method of moments estimator for \(\beta\) and check whether it is unbiased.
+\end{enumerate}
+
+\item Let \(x_1, x_2, \dots, x_n\) be a random sample from the Pareto distribution with probability density function
+\[
+f(x \mid \alpha) = \frac{\alpha \cdot 2^\alpha}{x^{\alpha+1}}, \quad x \geq 2,
+\]
+where \(\alpha > 0\) is the shape parameter.
+
+\begin{enumerate}
+    \item {[4]} Derive the maximum likelihood estimator \(\hat{\alpha}_{MLE}\) for the parameter \(\alpha\).
+    
+    \item {[2]} Verify that the obtained estimator corresponds to a global maximum of the likelihood function.
+    
+    \item {[1]} Find the sufficient statistic for \(\alpha\).
+    
+    \item {[3]} Check whether \(\hat{\alpha}_{MLE}\) is unbiased for \(\alpha\).
+\end{enumerate}
+
+\item Let $y_1 = \theta + \varepsilon_1$ and $y_2 = 2\theta + \varepsilon_2$,
+where \(\varepsilon_1 \sim \cN(0, 1)\) and \(\varepsilon_2 \sim \cN(0, 4)\) are independent random variables.
+
+We are interested in estimating unknown \(q = \theta^2\) based on the observations \(y_1, y_2\).
+Consider quadratic estimators of the form
+\[
+\hat q = c_1 y_1^2 + c_2 y_2^2 + d,
+\]
+where \(c_1, c_2, d \) are some coefficients.
+
+\begin{enumerate}
+
+    \item {[1]} Find the distribution of $y_1$ and $y_2$
+
+    \item {[3]} Find the condition on \(c_1, c_2, d\) such that the estimator $\hat q$ is unbiased for $q$.
+
+    \item {[3]} Assuming the unbiasedness conditions, find the \(\text{MSE}(\hat q)\).
+    Hint: \(\E(y_i^4) = i^4(\theta^4 + 6\theta^2 + 3).\)
+
+    \item {[3]} Let \(\theta = 2\). Find the values of \(c_1, c_2\) and \(d\) that minimize the \(\text{MSE}(\hat q)\) subject to the unbiasedness condition.
+\end{enumerate}
+
+\item Consider the following joint distribution of the vector $(X_i, Y_i)$,
+\[
+\P(X_i = x, Y_i = y) = p(1-p)^{y-x}q(1-q)^{x},
+\]
+where $x \in \{0, 1, 2, \dots\}$, $y \in \{0, 1, 2, \dots \}$ and $x \leq y$. 
+Observations $(X_1, Y_1)$, $(X_2, Y_2)$, \dots, $(X_n, Y_n)$ are independent.
+
+\begin{enumerate}
+    \item {[5]} Construct a likelihood ratio test for the hypothesis $H_0$: $p = 1/2$ against alternative $p\neq 1/2$ if you know that $q = 1/2$.
+    
+    \item {[5]} Construct a likelihood ratio test for the hypothesis $H_0$: $p = q$ against alternative $p\neq q$.
+\end{enumerate}
+
+Reminder: clearly specify the distribution of $LR$-statistic under $H_0$ and describe the decision rule.
+
+\item Consider the following joint distribution of the vector $(X_i, Y_i)$,
+\[
+\P(X_i = x, Y_i = y) = p(1-p)^{y-x}q(1-q)^{x},
+\]
+where $x \in \{0, 1, 2, \dots\}$, $y \in \{0, 1, 2, \dots \}$ and $x \leq y$. 
+Observations $(X_1, Y_1)$, $(X_2, Y_2)$, \dots, $(X_n, Y_n)$ are independent.
+
+\begin{enumerate}
+    \item {[5]} Find theoretical Fisher information for unknown $p$ if you know that $q = 1/2$.
+    \item {[5]} Find theoretical Fisher information for unknown $p$ and $q$. 
+\end{enumerate}
+
+
+\item Consider the following joint distribution of the vector $(X_i, Y_i)$,
+\[
+\P(X_i = x, Y_i = y) = p(1-p)^{y-x}q(1-q)^{x},
+\]
+where $x \in \{0, 1, 2, \dots\}$, $y \in \{0, 1, 2, \dots \}$ and $x \leq y$. 
+Observations $(X_1, Y_1)$, $(X_2, Y_2)$, \dots, $(X_n, Y_n)$ are independent.
+
+\begin{enumerate}
+    \item {[5]} Find any minimal sufficient statistic for unknown $p$ if you know that $q = 1/2$.
+    \item {[5]} Find any minimal sufficient statistic for unknown $p$ and $q$. 
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+
 
 
 \subsection[2025-2026a]{\hyperref[sec:sol_kr_04_2025_2026a]{2025-2026a}}
