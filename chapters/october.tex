@@ -9,6 +9,187 @@
 \thispagestyle{empty}
 \section{October exam}
 
+\subsection[2026-2027]{\hyperref[sec:sol_kr_01_2026_2027]{2026-2027}}
+\label{sec:kr_01_2026_2027}
+
+\begin{enumerate}
+    \item 
+An AI grader can handle at most three mistakes at a time.
+Every minute, independently of the past, it either
+creates two new mistakes or corrects one existing mistake,
+each with probability $1/2$. Let $X_n$ be the number of mistakes at minute $n$, with $X_0=0$. The number of mistakes cannot exceed
+3 or fall below 0. Thus,
+\[
+X_{n+1}=
+\begin{cases}
+\min\{X_n+2,3\}, &\text{with probability }1/2\\
+\max\{X_n-1,0\}, &\text{with probability }1/2
+\end{cases}
+\]
+\begin{enumerate}
+    \item[(a)] [2] Draw the transition diagram
+    of the Markov chain. Write down the transition matrix of the Markov chain.
+
+    \item[(b)] [2] Find
+    $\mathbb{P}(X_3=3\mid X_0=0)$.     
+
+    \item[(c)] [3] Let $T$ be the number of minutes
+    required to reach station 3 for the first time.
+    Using first-step analysis, find $\mathbb{E}(T)$
+    starting from state 0.
+
+    \item[(d)] [3] Find $\operatorname{Var}(T)$.
+\end{enumerate}
+
+\item
+Let $X$ and $Y$ be independent random variables
+such that 
+\[
+X\sim \operatorname{Poisson}(\lambda = 2): \quad \mathbb{P}(X=k)=\frac{\lambda^k e^{-\lambda}}{k!}, k=0,1,2,\ldots
+\]
+\[
+Y \sim \operatorname{Bernoulli}\left(p = \frac12\right): \quad  \mathbb{P}(Y=k)=p^k \cdot {(1-p)}^{(1-k)}, \, k = 0,1
+\]
+$$
+S = X + 2Y
+$$
+\begin{enumerate}
+    \item[(a)] [2] Find $\mathbb{E}(S)$ and $\operatorname{Var}(S)$.
+    
+    \item[(b)] [5] Find the
+    moment-generating function $M_S(t)$.
+    
+    \textit{Hint: find the moment-generating functions $M_X(t)$ and $M_Y(t)$}
+
+    \item[(c)] [3]
+    Calculate the conditional probability
+    $
+    \mathbb{P}(Y=1 \mid S=4).
+    $
+
+\end{enumerate}
+
+\item
+The Boris is trapped in a magical hotel with infinitely many
+floors numbered $0,1,2,\ldots$.
+
+Every minute, the Boris moves according to the following rules:
+\begin{itemize}
+    \item From the lobby (floor $0$), the Boris takes an
+    elevator to floor $1$ with probability $1-p$, or an
+    express elevator directly to floor $3$ with probability $p$.
+    
+    \item From any floor $k\geqslant 1$, the Boris either climbs
+    one floor up with probability $1/2$, or falls through
+    a magical trapdoor directly back to the lobby
+    with probability $1/2$.
+\end{itemize}
+
+All choices are independent, and $0<p<1$.
+Let $X_n$ denote the Boris floor after $n$ minutes,
+with $X_0=0$.
+
+\begin{enumerate}
+    \item[(a)] [2] Draw the transition diagram of the
+    Markov chain. Is the chain irreducible?
+
+    \item[(b)] [5] Assuming that stationary distribution exists, find the stationary distribution.
+
+    \item[(c)] [2] In the long run, what proportion of time
+    does the tourist spend on floor $5$ or above?
+
+    \item[(d)] [1] Find the asymptotic probability distribution of the highest floor visited during the first 100 minutes.
+\end{enumerate}
+
+\item 
+Customers arrive at a café according to a Poisson process with a constant rate of \(\lambda=2\) customers per hour.
+
+The café owner considers two overlapping time intervals:
+$
+A=[0,2],\ B=[1,3].
+$
+
+\begin{enumerate}
+    \item[(a)] [2] Find the probability that no customers arrive during \([0,2]\) and the expected time of the first client arrival.
+
+    \item[(b)] [4] It is known that exactly one customer arrived during the first two hours. Find the probability that exactly two customers arrived during the interval \([1,3]\).
+
+    \item[(c)] [3] It is known that exactly one customer arrived during the first two hours. Find the conditional expected number of customers arriving during \([1,3]\).
+
+    \item[(d)] [1] Find the distribution of the longest interval without clients over the entire interval.
+\end{enumerate}
+
+\item 
+Let $X_1, X_2, \ldots$ and $Y_1, Y_2, \ldots$ be
+mutually independent random variables such that
+\[
+X_n =
+\begin{cases}
+1, & \text{with probability } \frac{1}{n}\\
+0, & \text{with probability } 1-\frac{1}{n}
+\end{cases}
+\]
+\[
+Y_n \sim \operatorname{Bernoulli}\left(\frac12\right)
+\]
+\[
+Z_n = n^{1/3} X_n Y_n
+\]
+\begin{enumerate}
+    \item[(a)] [2] Find the probability limit
+    $
+    \operatorname{plim}_{n\to\infty} Z_n.
+    $
+
+    \item[(b)] [4] Does $Z_n$ converge almost surely?
+    Justify your answer.
+
+    \item[(c)] [4] For which natural values of $k \geqslant 1$ does
+    $Z_n$ converge in $L^k$?
+\end{enumerate}
+
+\item
+Let $X$ and $Y$ be two independent random
+variables with values
+$\{1,2,3\}$ with equal probabilities.
+
+Define the events
+\(
+A=\{X>Y\},
+\,
+B=\{X+Y \text{ is odd}\},
+\)
+and the sigma-algebra
+\(
+\mathcal{F}=\sigma(A,B).
+\)
+
+\begin{enumerate}
+    \item[(a)] [3]
+    Find all events of $\mathcal{F}$ and
+    calculate their probabilities.
+
+    \item[(b)] [1]
+    How many events are contained in
+    $\mathcal{F}$?
+
+     \item[(c)] [3]
+    Calculate the conditional probability
+    \(
+    \P(X=3\mid B).
+    \)
+
+  
+    \item[(d)] [3]
+    Find the conditional expectation
+    \(
+    \E(X\mid\mathcal{F}).
+    \)
+    Express your answer on each event
+    of $\mathcal{F}$.
+\end{enumerate}
+
+\end{enumerate}
 
 \subsection[2025-2026]{\hyperref[sec:sol_kr_01_2025_2026]{2025-2026}}
 \label{sec:kr_01_2025_2026} % \label{ссылка сюда}
